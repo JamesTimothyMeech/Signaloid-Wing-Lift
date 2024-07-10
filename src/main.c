@@ -2,6 +2,11 @@
 #include <uxhw.h>
 #include <math.h>
 
+enum
+{
+	kMaxData = 29,
+};
+
 double 
 calculate_velocity_from_C_p(double C_p, double v_infinity)
 {
@@ -17,18 +22,36 @@ calculate_lift_from_velocities(double v_lower, double v_upper, double rho, doubl
 int
 main(int argc, char *  argv[])
 {
-	double	v_infinity, C_p_upper, v_upper, C_p_lower, v_lower, rho, lift, A;
+	double	v_infinity, C_p_upper, v_upper, C_p_lower, v_lower, rho, lift, A, upper_x_c, lower_x_c;
+
+	char buffer[1024];
+	float C_p_upper_a[kMaxData];
+	float C_p_lower_a[kMaxData];
+	FILE *experimental_data;
+	experimental_data = fopen("../data/Run57.txt", "r");
+
+	for(int i = 0 ; i < 7 ; i++)
+	{
+		fgets(buffer, sizeof(buffer), experimental_data);
+	}
+
+	for(int i = 0 ; i < 29 ; i++)
+	{
+		fscanf(experimental_data, "%f, %f, %f, %f\n", &upper_x_c, &C_p_upper, &lower_x_c, &C_p_lower);
+		printf("%f, %f, %f, %f\n", upper_x_c, C_p_upper, lower_x_c, C_p_lower);
+		C_p_upper_a[i] = C_p_upper;
+		C_p_lower_a[i] = C_p_lower;
+	}
 
 	rho = 1.225;
 	A = 1.0;
-
-	v_infinity = UxHwDoubleGaussDist(95.2 * 0.3048, (95.2 * 0.3048) / 100 );
+	v_infinity = 95.2 * 0.3048;
 	printf("v_infinity = %lf\n", v_infinity);
 
-	C_p_lower = UxHwDoubleUniformDist(-0.300, 0.992);
+	C_p_lower = UxHwDoubleDistFromSamples(C_p_lower_a, kMaxData);
 	printf("C_p_lower = %lf\n", C_p_lower);
 
-	C_p_upper = UxHwDoubleUniformDist(-3.954, -0.300);
+	C_p_upper = UxHwDoubleDistFromSamples(C_p_upper_a, kMaxData);
 	printf("C_p_upper = %lf\n", C_p_upper);
 
 	v_lower = calculate_velocity_from_C_p(C_p_lower, v_infinity);

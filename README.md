@@ -6,37 +6,27 @@
 ## Plan for Calculating Lift Using Experimental Coefficient of Pressure Measurements for NACA 4415 Airfoil
 1) Get distribution of measured coefficients of pressure $C_p$ along airfoil and a point value $v_\infty$ for air velocity upstream of airfoil from publically avaliable experimental data [1] described in article [2]. Select NACA 4415 Airfoil under 3-by-5-Ft Wind Tunnel Tests to download article and raw data. Choose data in Run 57 of file N4415c100.txt because the article explicitly states "Steady state results of the NACA 4415 testing at Reynolds number of 1.00 million showed a baseline maximum lift coefficient of 1.35 at 14.3° angle of attack." so we know that the system was in steady state and without any leading edge grit roughness or pitch oscillations applied [2].
 2) Load the upper wing surface $C_p$ and lower wing surface $C_p$ distribution along the wing into one uncertain variable each and take $v_\infty = 95.2$ $\mathrm{ft/s}$ as point value.
-3) Use the upper and lower wing surface distributions of $C_p$ and Bernoulli's principle to calculate the pressure difference across the wing.
+3) Use the upper and lower wing surface distributions of $C_p$ to calculate the pressure difference across the wing.
 4) Use the pressure difference and the surface area of the wing to calculate the lift.
 
 ## Assumptions Required for the Plan to Work
 1) My interpretation of the experimental data from [1] and [2] is correct.
 2) The air flowing over the airfoil has constant density $\rho$ (it cannot be compressed to change density), and has zero viscosity. Also the experiment is conducted at constant air temperature with constant humidity and a fixed elevation.
 
-## Calculate Flow Velocity Using Coefficient of Pressure 
+## Calculate Airfoil Differential Pressure Using Coefficient of Pressure 
 
 Let $v$ be the velocity of the air at a specific point in the flow ($\mathrm{m/s}$) and $v_\infty$ be the uniform velocity of the air far upstream from the airfoil ($\mathrm{m/s}$).
 Let the coefficient of pressure for each point in the flow be a unitless quantity where
 
-$$ C_p = 1 - \frac{v^2}{v^2_\infty} $$
+$$ C_p = \frac{p-p_\infty}{q_\infty} $$
 
-We can rearrange this equation to calculate the velocity at a specific point in the flow to be $v = v_\infty \sqrt{1 - C_p}$.
+where $q_\infty = \frac{1}{2} \rho v^2_\infty$. We can re-arrange the equation and substitute $\frac{1}{2} \rho v^2_\infty$ for $q_\infty$ to get
 
-## Calculate Wing Differential Pressure Using Bernoulli's Principle
+$$p = p_infty + \frac{1}{2} \rho v^2_\infty C_p$$.
 
-Let $p_\mathrm{Stagnation}$ be the stagnation pressure ($\mathrm{kg/ms^2}$) that is constant for all points along a streamline and
-$p_\mathrm{Dynamic}$ be the dynamic pressure ($\mathrm{kg/ms^2}$) due to the kinetic energy per unit volume of the flow.
-Let $p_\mathrm{Static}$ be the static pressure ($\mathrm{kg/ms^2}$).
-Assuming that the $\rho g h$ term of the is negligible we can write Bernoulli's Principle as
+Then $\Delta p = p_\mathrm{Lower} - p_\mathrm{Upper} = \frac{1}{2} \rho v^2_\infty (C^\mathrm{Lower}_p C^\mathrm{Upper}_p$ as $p_\infty$ is present in the expression for $p_\mathrm{Lower}$ and $p_\mathrm{Upper}$ and therefore cancels out. Once we have calculated $\Delta p$ the lift is 
 
-$$p_\mathrm{Static} + p_\mathrm{Dynamic} = p_\mathrm{Stagnation}$$
-
-where $p_\mathrm{Dynamic} = \frac{\rho v^2}{2}$ at a point in the flow of a fluid with density $\rho$ ($\mathrm{kg/m^3}$) where the flow velocity is $v$ ($\mathrm{m/s}$).
-Assuming that the stagnation pressure is equal for the streamlines above and below the wing (the flow is irrotational) we can write
-
-$$p_\mathrm{Upper} + \frac{\rho v_\mathrm{Upper}^2}{2} = p_\mathrm{Lower} + \frac{\rho v_\mathrm{Lower}^2}{2}$$ 
-
-and we can re-arrange this to $\Delta p = p_\mathrm{Lower} - p_\mathrm{Upper} = \frac{\rho}{2} (v_\mathrm{Upper}^2 - v_\mathrm{Lower}^2)$ where the lift $L$ produced by the wing ($\mathrm{N}$) is $L = \Delta p A.$
+$$L = \Delta p A.$$
 
 ## References
 

@@ -39,7 +39,7 @@ main(int argc, char *  argv[])
 
 	for(int i = 0 ; i < 29 ; i++)
 	{
-		fscanf(file_pointer, "%lf, %lf, %lf, %lf\n", &upper_x_c_a[i], &C_p_upper_a[i], &lower_x_c_a[i], &lower_x_c_a[i]);
+		fscanf(file_pointer, "%lf, %lf, %lf, %lf\n", &upper_x_c_a[i], &C_p_upper_a[i], &lower_x_c_a[i], &C_p_lower_a[i]);
 	}
 
 	rho = 1.225;

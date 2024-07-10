@@ -38,7 +38,6 @@ main(int argc, char *  argv[])
 	for(int i = 0 ; i < 29 ; i++)
 	{
 		fscanf(experimental_data, "%f, %f, %f, %f\n", &upper_x_c, &C_p_upper, &lower_x_c, &C_p_lower);
-		printf("%f, %f, %f, %f\n", upper_x_c, C_p_upper, lower_x_c, C_p_lower);
 		C_p_upper_a[i] = C_p_upper;
 		C_p_lower_a[i] = C_p_lower;
 	}

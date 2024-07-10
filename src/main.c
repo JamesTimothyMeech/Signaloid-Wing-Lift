@@ -57,8 +57,8 @@ main(int argc, char *  argv[])
 
 	for(int i = 0 ; i < 29 ; i++)
 	{
-		C_p_upper = C_p_upper + 0.5 * (C_p_upper_a[i] + C_p_upper_a[i+1]) * (upper_x_c_a[i+1] - upper_x_c_a[i+1]);
-		C_p_lower = C_p_lower + 0.5 * (C_p_lower_a[i] + C_p_lower_a[i+1]) * (lower_x_c_a[i+1] - lower_x_c_a[i+1]);
+		C_p_upper = C_p_upper + 0.5 * (C_p_upper_a[i] + C_p_upper_a[i+1]) * (upper_x_c_a[i+1] - upper_x_c_a[i]);
+		C_p_lower = C_p_lower + 0.5 * (C_p_lower_a[i] + C_p_lower_a[i+1]) * (lower_x_c_a[i+1] - lower_x_c_a[i]);
 	}
 
 	printf("C_p_upper = %lf\n", C_p_upper);

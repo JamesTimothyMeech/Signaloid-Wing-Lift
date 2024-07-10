@@ -12,6 +12,7 @@
 ## Assumptions Required for the Plan to Work
 1) My interpretation of the experimental data from [1] and [2] is correct.
 2) The air flowing over the airfoil has constant density $\rho$ (it cannot be compressed to change density), and has zero viscosity. Also the experiment is conducted at constant air temperature with constant humidity and a fixed elevation.
+3) The airfoil has only horizontal surfaces so none of the pressure difference that generates the lift of the airfoil is lost due to the pressure pushing on a non-horizontal surface.
 
 ## Calculate Airfoil Differential Pressure Using Coefficient of Pressure 
 
@@ -28,11 +29,16 @@ Then $\Delta p = p_\mathrm{Lower} - p_\mathrm{Upper} = \frac{1}{2} \rho v^2_\inf
 
 $$L = \Delta p A.$$
 
-## Check Lift Calculation Result Using Experimentally Measured Coefficient of Lift
+## Results and Checking Lift Calculation Result Using Experimentally Measured Coefficient of Lift
 
-The dataset [1] contains an experimentally measured value of $C_L = 1.354$ for the coefficient of lift that we can use to check the result of our program. We can calculate the lift from the coefficient of lift and known parameters 
+Run 47 in file N4415c100.txt in the dataset [1] contains an experimentally measured value of $C_L = 1.354$ for the coefficient of lift that we can use to check the result of our program. We can calculate the lift from the coefficient of lift and known parameters 
 
 $$L = C_L q_\infty A = 698 N$$
+
+| Processor    | $C_p$ as distribution | $C_p$ Weighted Average | Drop out half of $C_p$ datapoints |
+|--------------|-----------------------|------------------------|-----------------------------------| 
+|              | 1.99                  | *7*                    |                                   |
+| Bananas      | **1.89**              | 5234                   |                                   |
 
 ## References
 

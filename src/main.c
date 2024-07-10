@@ -62,7 +62,6 @@ main(int argc, char *  argv[])
 		if (i < 26)
 		{
 			C_p_lower = C_p_lower + 0.5 * (C_p_lower_a[i] + C_p_lower_a[i+1]) * (lower_x_c_a[i+1] - lower_x_c_a[i]);
-			printf("lower_x_c_a[i+1] %f", lower_x_c_a[i+1]);
 		}
 	}
 

@@ -16,7 +16,7 @@ calculate_lift_from_C_p(double C_p_upper, double C_p_lower, double v_infinity, d
 int
 main(int argc, char *  argv[])
 {
-	double	v_infinity, C_p_upper_average, C_p_lower_average, rho, lift, A, upper_x_c, lower_x_c;
+	double	v_infinity, C_p_upper_average, C_p_lower_average, rho, lift, A;
 
 	char buffer[1024];
 	double C_p_upper_a[kMaxData];
@@ -39,7 +39,7 @@ main(int argc, char *  argv[])
 
 	for(int i = 0 ; i < 29 ; i++)
 	{
-		fscanf(file_pointer, "%lf, %lf, %lf, %lf\n", &upper_x_c_a[i], &C_p_upper_a[i], &lower_x_c, &lower_x_c_a[i]);
+		fscanf(file_pointer, "%lf, %lf, %lf, %lf\n", &upper_x_c_a[i], &C_p_upper_a[i], &lower_x_c_a[i], &lower_x_c_a[i]);
 	}
 
 	rho = 1.225;

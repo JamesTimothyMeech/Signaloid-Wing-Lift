@@ -28,6 +28,12 @@ Then $\Delta p = p_\mathrm{Lower} - p_\mathrm{Upper} = \frac{1}{2} \rho v^2_\inf
 
 $$L = \Delta p A.$$
 
+## Check Lift Calculation Result Using Experimentally Measured Coefficient of Lift
+
+The dataset [1] contains experimentally measured values for the coefficient of lift that we can use to check the result of our program. We can calculate the lift from the coefficient of lift and known parameters 
+
+$$L = C_L q_\infty A = 698 N$$
+
 ## References
 
 [1] https://www.nrel.gov/wind/nwtc/airfoils-osu-data.html

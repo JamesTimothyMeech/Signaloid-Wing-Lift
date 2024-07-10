@@ -33,7 +33,7 @@ Assuming that the $\rho g h$ term of the is negligible we can write Bernoulli's 
 $$p_\mathrm{Static} + p_\mathrm{Dynamic} = p_\mathrm{Stagnation}$$
 
 Where $p_\mathrm{Dynamic} = \frac{\rho v^2}{2}$ at a point in the flow where the flow velocity is $v$.
- the stagnation pressure is equal for the streamlines above and below the wing we can write
+Assuming that the stagnation pressure is equal for the streamlines above and below the wing we can write
 
 $$p_\mathrm{Upper} + \frac{\rho v_\mathrm{Upper}^2}{2} = p_\mathrm{Lower} + \frac{\rho v_\mathrm{Lower}^2}{2}$$ 
 

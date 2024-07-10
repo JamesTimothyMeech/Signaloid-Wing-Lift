@@ -55,10 +55,15 @@ main(int argc, char *  argv[])
 	C_p_lower = 0;
 	
 
-	for(int i = 0 ; i < 29 ; i++)
+	for(int i = 0 ; i < kMaxData - 1 ; i++)
 	{
 		C_p_upper = C_p_upper + 0.5 * (C_p_upper_a[i] + C_p_upper_a[i+1]) * (upper_x_c_a[i+1] - upper_x_c_a[i]);
-		C_p_lower = C_p_lower + 0.5 * (C_p_lower_a[i] + C_p_lower_a[i+1]) * (lower_x_c_a[i+1] - lower_x_c_a[i]);
+		// We need to do this because there are only 27 valid C_p readings for the coefficient of pressure below the airfoil
+		if (i < 26)
+		{
+			C_p_lower = C_p_lower + 0.5 * (C_p_lower_a[i] + C_p_lower_a[i+1]) * (lower_x_c_a[i+1] - lower_x_c_a[i]);
+			printf("lower_x_c_a[i+1] %f", lower_x_c_a[i+1]);
+		}
 	}
 
 	printf("C_p_upper = %lf\n", C_p_upper);

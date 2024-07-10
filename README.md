@@ -32,9 +32,7 @@ Assuming that the stagnation pressure is equal for the streamlines above and bel
 
 $$p_\mathrm{Upper} + \frac{\rho v_\mathrm{Upper}^2}{2} = p_\mathrm{Lower} + \frac{\rho v_\mathrm{Lower}^2}{2}$$ 
 
-and we can re-arrange this to $\Delta p = p_\mathrm{Lower} - p_\mathrm{Upper} = \frac{\rho}{2} (v_\mathrm{Upper}^2 - v_\mathrm{Lower}^2)$
-
-
+and we can re-arrange this to $\Delta p = p_\mathrm{Lower} - p_\mathrm{Upper} = \frac{\rho}{2} (v_\mathrm{Upper}^2 - v_\mathrm{Lower}^2)$ where the lift $L = \Delta p A$.
 
 ## References
 

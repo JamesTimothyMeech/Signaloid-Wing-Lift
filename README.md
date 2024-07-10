@@ -30,7 +30,7 @@ $$L = \Delta p A.$$
 
 ## Check Lift Calculation Result Using Experimentally Measured Coefficient of Lift
 
-The dataset [1] contains experimentally measured values for the coefficient of lift that we can use to check the result of our program. We can calculate the lift from the coefficient of lift and known parameters 
+The dataset [1] contains an experimentally measured value of $C_L = 1.354$ for the coefficient of lift that we can use to check the result of our program. We can calculate the lift from the coefficient of lift and known parameters 
 
 $$L = C_L q_\infty A = 698 N$$
 

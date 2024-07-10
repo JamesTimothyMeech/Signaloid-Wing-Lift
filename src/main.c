@@ -28,7 +28,7 @@ main(int argc, char *  argv[])
 	double C_p_upper_a[kMaxData];
 	double C_p_lower_a[kMaxData];
 	FILE *experimental_data;
-	experimental_data = fopen("../data/Run57.txt", "r");
+	experimental_data = fopen("../data/Run57.txt", "r+");
 
 	for(int i = 0 ; i < 7 ; i++)
 	{

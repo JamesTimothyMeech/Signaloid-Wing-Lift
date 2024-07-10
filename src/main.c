@@ -27,17 +27,22 @@ main(int argc, char *  argv[])
 	char buffer[1024];
 	double C_p_upper_a[kMaxData];
 	double C_p_lower_a[kMaxData];
-	FILE *experimental_data;
-	experimental_data = fopen("../data/Run57.txt", "r+");
+	FILE *file_pointer;
+	file_pointer = fopen("../data/Run57.txt", "r+");
+	if (fp == NULL)
+	{
+		printf("Could not open %s input file!\n", "../data/Run57.txt");
+		return 0;
+	}
 
 	for(int i = 0 ; i < 7 ; i++)
 	{
-		fgets(buffer, sizeof(buffer), experimental_data);
+		fgets(buffer, sizeof(buffer), file_pointer);
 	}
 
 	for(int i = 0 ; i < 29 ; i++)
 	{
-		fscanf(experimental_data, "%lf, %lf, %lf, %lf\n", &upper_x_c, &C_p_upper, &lower_x_c, &C_p_lower);
+		fscanf(file_pointer, "%lf, %lf, %lf, %lf\n", &upper_x_c, &C_p_upper, &lower_x_c, &C_p_lower);
 		C_p_upper_a[i] = C_p_upper;
 		C_p_lower_a[i] = C_p_lower;
 	}

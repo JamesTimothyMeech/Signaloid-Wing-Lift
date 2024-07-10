@@ -40,10 +40,10 @@ This produced a reasonable value for the lift of y with an x \% error compared t
 It is however interesting that the flawed method of treating $C_p^\mathrm{Lower} and C_p^\mathrm{Upper}$ as distributions, even though they are not, provides reasonable agreement with the experimental lift coefficient and the weighted averaging that we ultimately used for the bulf of our analysis. 
 
 
-| Processor    | Precision            | Memory Size | Microarchitecture | Correlation Tracking | Weighted Average $C_p$    | Drop Out Half of $C_p$ Datapoints |
-|--------------|----------------------|-------------|-------------------|----------------------|---------------------------|-----------------------------------| 
-|              |                      |             |                   |                      |                           |                                   |
-|              |                      |             |                   |                      |                           |                                   |
+| Processor    | Precision            | Memory Size | Microarchitecture | Correlation Tracking | Weighted Average $C_p$ Commit # | Drop Out Half of $C_p$ Datapoints # |
+|--------------|----------------------|-------------|-------------------|----------------------|---------------------------------|-------------------------------------| 
+|              |                      |             |                   |                      |                                 |                                     |
+|              |                      |             |                   |                      |                                 |                                     |
 
 ## References
 

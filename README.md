@@ -13,6 +13,18 @@
 1) My interpretation of the experimental data from [1] and [2] is correct.
 2) The air flowing over the airfoil has constant density $\rho$ (it cannot be compressed to change density), and has zero viscosity. Also the experiment is conducted at constant air temperature with constant humidity and a fixed elevation.
 
+## Calculate Flow Velocity Using Coefficient of Pressure 
+
+Let $v$ be the velocity of the air at a specific point in the flow ($\mathrm{m/s}$).
+Let $v$ be the velocity of the air at a specific point in the flow ($\mathrm{m/s}$).
+Let the coefficient of pressure for each point in the flow be a unitless quatity where
+
+$$ C_p = 1 - \frac{v^2}{v^2_\infty} $$
+
+We can rearrange this equation to calculate the velocity at a specific point in the flow to be $v = v_\infty \sqrt{1 - C_p}$.
+
+## Calculate Wing Differential Pressure Using Bernoulli's Principle
+
 ## References
 
 [1] https://www.nrel.gov/wind/nwtc/airfoils-osu-data.html

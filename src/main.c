@@ -1,19 +1,20 @@
 #include <stdio.h>
 #include <uxhw.h>
+#include <math.h>
 
 int
 main(int argc, char *  argv[])
 {
-	double	a, b, c;
+	double	v_infinity, C_p, c;
 
-	a = UxHwDoubleUniformDist(0.5, 1.0);
-	printf("a = %lf\n", a);
+	v_infinity = UxHwDoubleGaussDist(95.2 * 0.3048, (95.2 * 0.3048) / 100 );
+	printf("v_infinity = %lf\n", v_infinity);
 
-	b = UxHwDoubleUniformDist(10.0, 20.0);
-	printf("b = %lf\n", b);
+	C_p = UxHwDoubleUniformDist(-0.300, 0.992);
+	printf("C_p = %lf\n", C_p);
 
-	c = (a+b)/(a-b);
-	printf("c = %lf\n", c);
+	v = v_infinity*sqrt(1 - C_p);
+	printf("v = %lf\n", v);
 
 #ifdef DEBUG
 	printf("debug message\n");

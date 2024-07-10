@@ -52,7 +52,7 @@ main(int argc, char *  argv[])
 	v_infinity = 95.2 * 0.3048;
 	printf("v_infinity = %lf\n", v_infinity);
 
-	C_p_lower = UxHwDoubleDistFromSamples(C_p_lower_a, kMaxData);
+	C_p_lower = UxHwDoubleDistFromSamples(C_p_lower_a, kMaxData - 2);
 	printf("C_p_lower = %lf\n", C_p_lower);
 
 	C_p_upper = UxHwDoubleDistFromSamples(C_p_upper_a, kMaxData);

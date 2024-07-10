@@ -25,6 +25,15 @@ We can rearrange this equation to calculate the velocity at a specific point in 
 
 ## Calculate Wing Differential Pressure Using Bernoulli's Principle
 
+$$p_\mathrm{Static} + p_\mathrm{Dynamic} = p_\mathrm{Stagnation}$$
+
+Where $p_\mathrm{Dynamic} = \frac{\rho v^2}{2}$ at a point in the flow where the flow velocity is $v$.
+Assuming that the stagnation pressure is equal for the streamlines above and below the wing we can write
+
+$$p_\mathrm{Upper} + \frac{\rho v_{Upper}^2}{2} = p_\mathrm{Lower} + \frac{\rho v_{Lower}^2}{2}$$ and we can re-arrange this to 
+
+
+
 ## References
 
 [1] https://www.nrel.gov/wind/nwtc/airfoils-osu-data.html

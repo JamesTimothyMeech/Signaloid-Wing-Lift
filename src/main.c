@@ -7,22 +7,16 @@ enum
 	kMaxData = 29,
 };
 
-double 
-calculate_velocity_from_C_p(double C_p, double v_infinity)
-{
-	return v_infinity*sqrt(1 - C_p);
-}
-
 double
-calculate_lift_from_velocities(double v_lower, double v_upper, double rho, double A)
+calculate_lift_from_C_p(double C_p_upper, double C_p_lower, double v_infinity, double rho, double A)
 {
-	return 0.5 * rho * A * (pow(v_upper, 2) - pow(v_lower,2));
+	return 0.5 * rho * pow(v_infinity, 2) * (C_p_lower - C_p_upper);
 }
 
 int
 main(int argc, char *  argv[])
 {
-	double	v_infinity, C_p_upper, v_upper, C_p_lower, v_lower, rho, lift, A, upper_x_c, lower_x_c;
+	double	v_infinity, C_p_upper, C_p_lower, rho, lift, A, upper_x_c, lower_x_c;
 
 	char buffer[1024];
 	double C_p_upper_a[kMaxData];
@@ -58,12 +52,7 @@ main(int argc, char *  argv[])
 	C_p_upper = UxHwDoubleDistFromSamples(C_p_upper_a, kMaxData);
 	printf("C_p_upper = %lf\n", C_p_upper);
 
-	v_lower = calculate_velocity_from_C_p(C_p_lower, v_infinity);
-	printf("v_lower = %lf\n", v_lower);
-	v_upper = calculate_velocity_from_C_p(C_p_upper, v_infinity);
-	printf("v_upper = %lf\n", v_upper);
-
-	lift = calculate_lift_from_velocities(v_lower, v_upper, rho, A);
+	lift = calculate_lift_from_C_p(C_p_upper, C_p_lower, v_infinity, rho, A);
 	printf("lift = %lf\n", lift);
 
 #ifdef DEBUG

@@ -31,9 +31,9 @@ main(int argc, char *  argv[])
 	C_p_upper = UxHwDoubleUniformDist(-3.954, -0.300);
 	printf("C_p_upper = %lf\n", C_p_upper);
 
-	v_lower = calculate_v_from_C_p(C_p_lower, v_infinity);
+	v_lower = calculate_velocity_from_C_p(C_p_lower, v_infinity);
 	printf("v_lower = %lf\n", v_lower);
-	v_upper = calculate_v_from_C_p(C_p_upper, v_infinity);
+	v_upper = calculate_velocity_from_C_p(C_p_upper, v_infinity);
 	printf("v_upper = %lf\n", v_upper);
 
 	lift = calculate_lift_from_velocities(v_lower, v_upper, rho, A);

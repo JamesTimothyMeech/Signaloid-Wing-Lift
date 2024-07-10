@@ -35,10 +35,10 @@ Run 47 in file N4415c100.txt in the dataset [1] contains an experimentally measu
 
 $$L = C_L q_\infty A = 698 N$$
 
-| Processor    | $C_p$ as distribution | $C_p$ as weighted average | Drop out half of $C_p$ datapoints |
-|--------------|-----------------------|---------------------------|-----------------------------------| 
-|              | 1.99                  | *7*                       |                                   |
-| Bananas      | **1.89**              | 5234                      |                                   |
+| Processor    | Precision            | Memory Size | Microarchitecture | Correlation Tracking | $C_p$ as distribution | $C_p$ as weighted average | Drop out half of $C_p$ datapoints |
+|--------------|----------------------|-------------|-------------------|----------------------|-----------------------|---------------------------|-----------------------------------| 
+|              |                      |             |                   |                      |                       |                           |                                   |
+|              |                      |             |                   |                      |                       |                           |                                   |
 
 ## References
 

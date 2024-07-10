@@ -25,10 +25,15 @@ We can rearrange this equation to calculate the velocity at a specific point in 
 
 ## Calculate Wing Differential Pressure Using Bernoulli's Principle
 
+Let $p_\mathrm{Stagnation}$ be the stagnation pressure (\mathrm{kg/ms^2}) that is constant for all points along a streamline and
+$p_\mathrm{Dynamic}$ be the dynamic pressure (\mathrm{kg/ms^2}) due to the kinetic energy per unit volume of the flow.
+Let $p_\mathrm{Static}$ be the static pressure (\mathrm{kg/ms^2}) measured when the fluid is at rest relative to the measurement.
+Assuming that the $\rho g h$ term of the is negligible we can write Bernoulli's Principle as
+
 $$p_\mathrm{Static} + p_\mathrm{Dynamic} = p_\mathrm{Stagnation}$$
 
 Where $p_\mathrm{Dynamic} = \frac{\rho v^2}{2}$ at a point in the flow where the flow velocity is $v$.
-Assuming that the stagnation pressure is equal for the streamlines above and below the wing we can write
+ the stagnation pressure is equal for the streamlines above and below the wing we can write
 
 $$p_\mathrm{Upper} + \frac{\rho v_\mathrm{Upper}^2}{2} = p_\mathrm{Lower} + \frac{\rho v_\mathrm{Lower}^2}{2}$$ 
 

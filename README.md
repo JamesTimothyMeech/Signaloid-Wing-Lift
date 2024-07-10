@@ -20,7 +20,7 @@ Let the coefficient of pressure for each point in the flow be a unitless quantit
 
 $$ C_p = \frac{p-p_\infty}{q_\infty} $$
 
-where $ q_\infty = \frac{1}{2} \rho v^2_\infty $. We can re-arrange the equation and substitute $ \frac{1}{2} \rho v^2_\infty $ for $ q_\infty $ to get
+where $ q_\infty = \frac{1}{2} \rho v^2_\infty $. We can re-arrange the equation and substitute $\frac{1}{2} \rho v^2_\infty $ for $ q_\infty$ to get
 
 $$ p = p_\infty + \frac{1}{2} \rho v^2_\infty C_p $$.
 

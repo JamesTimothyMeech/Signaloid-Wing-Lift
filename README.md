@@ -22,7 +22,7 @@ $$ C_p = \frac{p-p_\infty}{q_\infty} $$
 
 where $q_\infty = \frac{1}{2} \rho v^2_\infty$. We can re-arrange the equation and substitute $\frac{1}{2} \rho v^2_\infty$ for $q_\infty$ to get
 
-$$ p = p_\infty + \frac{1}{2} \rho v^2_\infty C_p $$.
+$$p = p_\infty + \frac{1}{2} \rho v^2_\infty C_p$$.
 
 Then $ \Delta p = p_\mathrm{Lower} - p_\mathrm{Upper} $ = \frac{1}{2} \rho v^2_\infty (C^\mathrm{Lower}_p C^\mathrm{Upper}_p as $p_\infty$ is present in the expression for $p_\mathrm{Lower}$ and $p_\mathrm{Upper}$ and therefore cancels out. Once we have calculated $\Delta p$ the lift is 
 

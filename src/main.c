@@ -2,6 +2,11 @@
 #include <uxhw.h>
 #include <math.h>
 
+double calculate_v_from_C_p(double C_p, double v_infinity)
+{
+	return v_infinity*sqrt(1 - C_p);
+}
+
 int
 main(int argc, char *  argv[])
 {
@@ -13,7 +18,7 @@ main(int argc, char *  argv[])
 	C_p = UxHwDoubleUniformDist(-0.300, 0.992);
 	printf("C_p = %lf\n", C_p);
 
-	v = v_infinity*sqrt(1 - C_p);
+	v = calculate_v_from_C_p(C_p, v_infinity);
 	printf("v = %lf\n", v);
 
 #ifdef DEBUG

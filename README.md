@@ -15,8 +15,7 @@
 
 ## Calculate Flow Velocity Using Coefficient of Pressure 
 
-Let $v$ be the velocity of the air at a specific point in the flow ($\mathrm{m/s}$).
-Let $v_\infty$ be the uniform velocity of the air far upstream from the airfoil ($\mathrm{m/s}$).
+Let $v$ be the velocity of the air at a specific point in the flow ($\mathrm{m/s}$) and $v_\infty$ be the uniform velocity of the air far upstream from the airfoil ($\mathrm{m/s}$).
 Let the coefficient of pressure for each point in the flow be a unitless quantity where
 
 $$ C_p = 1 - \frac{v^2}{v^2_\infty} $$
@@ -27,13 +26,13 @@ We can rearrange this equation to calculate the velocity at a specific point in 
 
 Let $p_\mathrm{Stagnation}$ be the stagnation pressure ($\mathrm{kg/ms^2}$) that is constant for all points along a streamline and
 $p_\mathrm{Dynamic}$ be the dynamic pressure ($\mathrm{kg/ms^2}$) due to the kinetic energy per unit volume of the flow.
-Let $p_\mathrm{Static}$ be the static pressure ($\mathrm{kg/ms^2}$) measured when the fluid is at rest relative to the measurement.
+Let $p_\mathrm{Static}$ be the static pressure ($\mathrm{kg/ms^2}$).
 Assuming that the $\rho g h$ term of the is negligible we can write Bernoulli's Principle as
 
 $$p_\mathrm{Static} + p_\mathrm{Dynamic} = p_\mathrm{Stagnation}$$
 
 where $p_\mathrm{Dynamic} = \frac{\rho v^2}{2}$ at a point in the flow of a fluid with density $\rho$ ($\mathrm{kg/m^3}$) where the flow velocity is $v$ ($\mathrm{m/s}$).
-Assuming that the stagnation pressure is equal for the streamlines above and below the wing we can write
+Assuming that the stagnation pressure is equal for the streamlines above and below the wing (the flow is irrotational) we can write
 
 $$p_\mathrm{Upper} + \frac{\rho v_\mathrm{Upper}^2}{2} = p_\mathrm{Lower} + \frac{\rho v_\mathrm{Lower}^2}{2}$$ 
 

@@ -44,7 +44,7 @@ main(int argc, char *  argv[])
 
 	rho = 1.225;
 	A = 1.0;
-	v_infinity = 95.2 * 0.3048;
+	v_infinity = UxHwDoubleGaussDist(95.2 * 0.3048, 95.2 * 0.3048 * 0.01); ;
 	printf("v_infinity = %lf\n", v_infinity);
 
 	C_p_upper_average = 0;

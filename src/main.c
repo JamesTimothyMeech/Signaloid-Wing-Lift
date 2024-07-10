@@ -21,6 +21,9 @@ main(int argc, char *  argv[])
 	char buffer[1024];
 	double C_p_upper_a[kMaxData];
 	double C_p_lower_a[kMaxData];
+	double upper_x_c_a[kMaxData];
+	double lower_x_c_a[kMaxData];
+
 	FILE *file_pointer;
 	file_pointer = fopen("Run57.txt", "r+");
 	if (file_pointer == NULL)
@@ -39,6 +42,8 @@ main(int argc, char *  argv[])
 		fscanf(file_pointer, "%lf, %lf, %lf, %lf\n", &upper_x_c, &C_p_upper, &lower_x_c, &C_p_lower);
 		C_p_upper_a[i] = C_p_upper;
 		C_p_lower_a[i] = C_p_lower;
+		upper_x_c_a[i] = upper_x_c;
+		lower_x_c_a[i] = lower_x_c;
 	}
 
 	rho = 1.225;
@@ -46,11 +51,18 @@ main(int argc, char *  argv[])
 	v_infinity = 95.2 * 0.3048;
 	printf("v_infinity = %lf\n", v_infinity);
 
-	C_p_lower = UxHwDoubleDistFromSamples(C_p_lower_a, kMaxData - 2);
-	printf("C_p_lower = %lf\n", C_p_lower);
+	C_p_upper = 0;
+	C_p_lower = 0;
+	
 
-	C_p_upper = UxHwDoubleDistFromSamples(C_p_upper_a, kMaxData);
+	for(int i = 0 ; i < 29 ; i++)
+	{
+		C_p_upper += 0.5 * (C_p_upper_a[i] + C_p_upper_a[i+1]) * (upper_x_c_a[i+1] - upper_x_c_a[i+1]);
+		C_p_lower += 0.5 * (C_p_lower_a[i] + C_p_lower_a[i+1]) * (lower_x_c_a[i+1] - lower_x_c_a[i+1]);
+	}
+
 	printf("C_p_upper = %lf\n", C_p_upper);
+	printf("C_p_upper = %lf\n", C_p_lower);
 
 	lift = calculate_lift_from_C_p(C_p_upper, C_p_lower, v_infinity, rho, A);
 	printf("lift = %lf\n", lift);

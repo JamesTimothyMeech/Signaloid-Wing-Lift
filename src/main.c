@@ -5,7 +5,7 @@
 int
 main(int argc, char *  argv[])
 {
-	double	v_infinity, C_p, c;
+	double	v_infinity, C_p, v;
 
 	v_infinity = UxHwDoubleGaussDist(95.2 * 0.3048, (95.2 * 0.3048) / 100 );
 	printf("v_infinity = %lf\n", v_infinity);

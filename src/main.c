@@ -36,7 +36,7 @@ main(int argc, char *  argv[])
 	v_upper = calculate_v_from_C_p(C_p_upper, v_infinity);
 	printf("v_upper = %lf\n", v_upper);
 
-	lift = calculate_lift_from_velocities(v_lower, v_upper, rho, A)
+	lift = calculate_lift_from_velocities(v_lower, v_upper, rho, A);
 	printf("lift = %lf\n", lift);
 
 #ifdef DEBUG

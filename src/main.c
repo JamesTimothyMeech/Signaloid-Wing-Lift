@@ -28,10 +28,10 @@ main(int argc, char *  argv[])
 	double C_p_upper_a[kMaxData];
 	double C_p_lower_a[kMaxData];
 	FILE *file_pointer;
-	file_pointer = fopen("../data/Run57.txt", "r+");
+	file_pointer = fopen("Run57.txt", "r+");
 	if (file_pointer == NULL)
 	{
-		printf("Could not open %s input file!\n", "../data/Run57.txt");
+		printf("Could not open %s input file!\n", "Run57.txt");
 		return 0;
 	}
 

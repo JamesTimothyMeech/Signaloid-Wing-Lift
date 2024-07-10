@@ -25,8 +25,8 @@ main(int argc, char *  argv[])
 	double	v_infinity, C_p_upper, v_upper, C_p_lower, v_lower, rho, lift, A, upper_x_c, lower_x_c;
 
 	char buffer[1024];
-	float C_p_upper_a[kMaxData];
-	float C_p_lower_a[kMaxData];
+	double C_p_upper_a[kMaxData];
+	double C_p_lower_a[kMaxData];
 	FILE *experimental_data;
 	experimental_data = fopen("../data/Run57.txt", "r");
 
@@ -37,7 +37,7 @@ main(int argc, char *  argv[])
 
 	for(int i = 0 ; i < 29 ; i++)
 	{
-		fscanf(experimental_data, "%f, %f, %f, %f\n", &upper_x_c, &C_p_upper, &lower_x_c, &C_p_lower);
+		fscanf(experimental_data, "%lf, %lf, %lf, %lf\n", &upper_x_c, &C_p_upper, &lower_x_c, &C_p_lower);
 		C_p_upper_a[i] = C_p_upper;
 		C_p_lower_a[i] = C_p_lower;
 	}

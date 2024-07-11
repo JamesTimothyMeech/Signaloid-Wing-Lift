@@ -43,7 +43,7 @@ This naive approach produced a suprisingly reasonable value for the lift of 722 
 This is likely due to the fact that the upper and lower $C_p$ measurments are reasonably uniformly spaced along the wing and therefore naively averaging them with uniform weight does not introduce a large amount of error. 
 Perhaps this should not be too much of a suprise as we can write that
 
-$$C_L = \sum^N (C_p^\mathrm{Lower}[i] - C_p^\mathrm{Upper}[i]) \Delta x$$
+$$C_L = \sum_{i=0}^N (C_p^\mathrm{Lower}[i] - C_p^\mathrm{Upper}[i]) \Delta x$$
 
 where $N$ is the number of $C_p$ measurements and $\Delta x$ is the distance between $C_p$ measurements that we assume to be constant for simplicity. 
 The table below shows that the mean lift has a negligible dependence on the processor used by the Signaloid Cloud Platform. 

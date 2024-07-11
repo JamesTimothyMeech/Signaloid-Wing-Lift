@@ -39,11 +39,11 @@ In our initial (commit #) experiments we read in $C_p^\mathrm{Lower}$ and $C_p^\
 This produced a reasonable value for the lift of y with an x \% error compared to the experimental result. Using the Signaloid Cloud Platform to simply visualize the distribution of discrete $C_p$ values over the length of the wing and then average those values was not a proper use of the capabilities of the Signaloid Cloud Platform. We therefore edited the code to perform a weighted averaging of the $C_p^\mathrm{Lower} and C_p^\mathrm{Upper}$ values based upon their relative position on the airfoil, taking into account that there are 29 valid measurement values for $C_p^\mathrm{Upper}$ and only 27 valid measurement values for $C_p^\mathrm{Lower}$. We chose to explore the inclusion of uncertainty in $v_\infty$, the uniform velocity of the air far upstream from the airfoil ($\mathrm{m/s}$) as this value is squared in our analysis, therefore amplifying any uncertainty already present in the variable. 
 It is however interesting that the flawed method of treating $C_p^\mathrm{Lower} and C_p^\mathrm{Upper}$ as distributions, even though they are not, provides reasonable agreement with the experimental lift coefficient and the weighted averaging that we ultimately used for the bulf of our analysis. 
  
-Weighted Average $C_p$ Commit # All processors use Athens microarchitecture except C0-Reference. 
+Weighted average of all valid $C_p$ upper and lower points (branch: main). All processors use Athens microarchitecture except C0-Reference. 
 As the two uncertain variables $v_\infty$ and $rho$ in the program are indepedent and  the results are the same with and without autocorellation tracking. 
 
 | Processor    | Precision            | Memory Size | Correlation Tracking | Mean       | Variance   | Skewness   | Kurtosis      |
-|--------------|----------------------|-------------|----------------------|------------|------------| -----------|---------------|
+|--------------|----------------------|-------------|----------------------|------------|------------|------------|---------------|
 | C0-XS        | 32                   | 64 MB       | Disabled             | 716.835513 | 220.969401 | 110.173271 | 138338.298592 |
 | C0-XS+       | 32                   | 64 MB       | Autocorrelation      | 716.835513 | 220.969401 | 110.173271 | 138338.298592 |
 | C0-S         | 64                   | 64 MB       | Disabled             | 716.835733 | 222.091034 | 113.959879 | 144171.186810 |
@@ -57,8 +57,22 @@ As the two uncertain variables $v_\infty$ and $rho$ in the program are indepeden
 | C0-Bypass    | NA                   | 64 MB       | Disabled             | 716.764165 | NA         | NA         | NA            |
 | C0-Reference | 32                   | 64 MB       | Disabled             | 683.976929 | NA         | NA         | NA            |
 
-Drop Out Half of $C_p$ Datapoints Commit #
+Drop all but one $C_p$ upper and lower datapoint (branch: two-measurements-only)
 
+| Processor    | Precision            | Memory Size | Correlation Tracking | Mean        | Variance   | Skewness   | Kurtosis       |
+|--------------|----------------------|-------------|----------------------|-------------|------------|------------|----------------|
+| C0-XS        | 32                   | 64 MB       | Disabled             | 1165.632326 | 584.273621 | 473.698986 | 967187.578964  | 
+| C0-XS+       | 32                   | 64 MB       | Autocorrelation      | 1165.632326 | 584.273621 | 473.698986 | 967187.578964  |
+| C0-S         | 64                   | 64 MB       | Disabled             | 1165.632683 | 587.239373 | 489.979815 | 1007968.021484 |
+| C0-S+        | 64                   | 64 MB       | Autocorrelation      | 1165.632683 | 587.239373 | 489.979815 | 1007968.021484 |
+| C0-M         | 128                  | 256 MB      | Disabled             | 1165.632801 | 588.220393 | 499.517758 | 1025626.362879 |
+| C0-M+        | 128                  | 256 MB      | Autocorrelation      | 1165.632801 | 588.220393 | 499.517758 | 1025626.362879 |
+| C0-L         | 256                  | 512 MB      | Disabled             | 1165.632839 | 588.543542 | 503.907609 | 1032929.310753 |
+| C0-L+        | 256                  | 512 MB      | Autocorrelation      | 1165.632839 | 588.543542 | 503.907609 | 1032929.310753 |
+| C0-XL        | 512                  | 1 GB        | Disabled             | 1165.632852 | 588.651833 | 505.599172 | 1035931.459392 |
+| C0-XL+       | 512                  | 1 GB        | Autocorrelation      | 1165.632852 | 588.651833 | 505.599172 | 1035931.459392 |
+| C0-Bypass    | NA                   | 64 MB       | Disabled             | 1165.516307 | NA         | NA         | NA             |
+| C0-Reference | 32                   | 64 MB       | Disabled             | 1175.779921 | NA         | NA         | NA             |
 
 ## References
 

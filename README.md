@@ -45,7 +45,7 @@ Perhaps this should not be too much of a suprise as we can write that
 
 $$C_L = \sum_{i=0}^N (C_p^\mathrm{Lower}[i] - C_p^\mathrm{Upper}[i]) \Delta x$$
 
-where $N$ is the number of $C_p$ measurements and $\Delta x$ is the distance between $C_p$ measurements that we assume to be constant for simplicity. 
+where $N$ is the number of $C_p$ measurements and $\Delta x$ is the distance between $C_p$ measurements normalized by chord length that we assume to be constant for simplicity. 
 The table below shows that the mean lift has a negligible dependence on the processor used by the Signaloid Cloud Platform. 
 The results for variance, skewness, and kurtosis should be ignored for the table below because loading the upper and lower $C_p$ values into distrubtions makes the uncertainty in the result artificially large.
 As the uncertain variables $C_p^\mathrm{Lower}$, $C_p^\mathrm{Upper}$, $v_\infty$, and $\rho$ in the program are indepedent, the results for each processor variant are the same with and without autocorellation tracking. 

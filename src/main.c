@@ -70,20 +70,9 @@ main(int argc, char *  argv[])
 	rho = UxHwDoubleUniformDist(krho - (krho * 0.01), krho + (krho * 0.01)); 
 	printf("rho = %lf\n", rho);
 	
-	// Set the variables that we use to hold the upper and lower C_p averages to zero so we can build up the average using summation
-	C_p_upper_average = 0;
-	C_p_lower_average = 0;
-	
-	// Sum up the upper and lower C_p values seperately using their coordinates to get a weighted average over each section of airfoil
-	for(int i = 0 ; i < kMaxData - 1 ; i++)
-	{
-		C_p_upper_average = C_p_upper_average + 0.5 * (C_p_upper_a[i] + C_p_upper_a[i+1]) * (upper_x_c_a[i+1] - upper_x_c_a[i]);
-		// We need to do this because there are only 27 valid C_p readings for the coefficient of pressure below the airfoil
-		if (i < 26)
-		{
-			C_p_lower_average = C_p_lower_average + 0.5 * (C_p_lower_a[i] + C_p_lower_a[i+1]) * (lower_x_c_a[i+1] - lower_x_c_a[i]);
-		}
-	}
+	// Use a hack to set the variables that we use to hold the upper and lower C_p data to uncertain variables as a sneaky way to average them
+	C_p_upper_average = UxHwDoubleDistFromSamples(C_p_upper_a, kMaxData);
+	C_p_lower_average = UxHwDoubleDistFromSamples(C_p_lower_a, kMaxData - 2);
 
 	printf("C_p_upper_average = %lf\n", C_p_upper_average);
 	printf("C_p_lower_average = %lf\n", C_p_lower_average);

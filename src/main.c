@@ -73,7 +73,11 @@ main(int argc, char *  argv[])
 	printf("C_p_lower_average = %lf\n", C_p_lower_average);
 
 	lift = calculate_lift_from_C_p(C_p_upper_average, C_p_lower_average, v_infinity, rho, ksurface_area);
-	printf("lift = %lf\n", lift);
+
+	printf("lift mean = %lf\n", UxHwDoubleNthMode(lift, 1));
+	printf("lift standard deviation = %lf\n", UxHwDoubleNthMode(lift, 2));
+	printf("lift skewness = %lf\n", UxHwDoubleNthMode(lift, 3));
+	printf("lift kurtosis = %lf\n", UxHwDoubleNthMode(lift, 4));
 
 #ifdef DEBUG
 	printf("debug message\n");

@@ -74,6 +74,23 @@ Drop all but one $C_p$ upper and lower datapoint (branch: two-measurements-only)
 | C0-Bypass    | NA                   | 64 MB       | Disabled             | 1165.516307 | NA         | NA         | NA             |
 | C0-Reference | 32                   | 64 MB       | Disabled             | 1175.779921 | NA         | NA         | NA             |
 
+$C_p$ averaging using distribution hack
+
+| Processor    | Precision            | Memory Size | Correlation Tracking | Mean        | Variance      | Skewness         | Kurtosis            |
+|--------------|----------------------|-------------|----------------------|-------------|---------------|------------------|---------------------|
+| C0-XS        | 32                   | 64 MB       | Disabled             | 722.047433  | 351549.855477 | 158068720.585565 | 408136562203.337219 |
+| C0-XS+       | 32                   | 64 MB       | Autocorrelation      | 722.047433  | 351549.855477 | 158068720.585565 | 408136562203.337219 |
+| C0-S         | 64                   | 64 MB       | Disabled             | 722.047654  | 352249.030375 | 159318029.403001 | 412785784902.068909 | 
+| C0-S+        | 64                   | 64 MB       | Autocorrelation      | 722.047654  | 352249.030375 | 159318029.403001 | 412785784902.068909 |
+| C0-M         | 128                  | 256 MB      | Disabled             | 722.047727  | 352473.791058 | 159696639.298318 | 414339588245.582153 |
+| C0-M+        | 128                  | 256 MB      | Autocorrelation      | 722.047727  | 352473.791058 | 159696639.298318 | 414339588245.582153 |
+| C0-L         | 256                  | 512 MB      | Disabled             | 722.047751  | 352531.040034 | 159839100.327245 | 414800142985.874634 |
+| C0-L+        | 256                  | 512 MB      | Autocorrelation      | 722.047751  | 352531.040034 | 159839100.327245 | 414800142985.874634 |
+| C0-XL        | 512                  | 1 GB        | Disabled             | 722.047759  | 352542.674467 | 159864706.009107 | 414886807348.927551 | 
+| C0-XL+       | 512                  | 1 GB        | Autocorrelation      | 722.047759  | 352542.674467 | 159864706.009107 | 414886807348.927551 |
+| C0-Bypass    | NA                   | 64 MB       | Disabled             | 721.975565  | NA            | NA               | NA                  |        
+| C0-Reference | 32                   | 64 MB       | Disabled             | 1023.393931 | NA            | NA               | NA                  |
+
 ## References
 
 [1] https://www.nrel.gov/wind/nwtc/airfoils-osu-data.html

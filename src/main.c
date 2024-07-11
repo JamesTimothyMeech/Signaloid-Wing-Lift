@@ -49,8 +49,11 @@ main(int argc, char *  argv[])
 	v_infinity_mean = kv_infinity_ft_per_s * kconvert_ft_per_s_to_m_per_s;
 	v_infinity_standard_deviation = 0.01 * v_infinity_mean;
 	v_infinity = UxHwDoubleGaussDist(v_infinity_mean, v_infinity_standard_deviation); 
-	rho = UxHwDoubleUniformDist(krho - (krho * 0.01), krho + (krho * 0.01)); 
 	printf("v_infinity = %lf\n", v_infinity);
+
+	rho = UxHwDoubleUniformDist(krho - (krho * 0.01), krho + (krho * 0.01)); 
+	printf("rho = %lf\n", rho);
+	
 
 	C_p_upper_average = 0;
 	C_p_lower_average = 0;

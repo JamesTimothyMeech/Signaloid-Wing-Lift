@@ -42,7 +42,7 @@ It is however interesting that the flawed method of treating $C_p^\mathrm{Lower}
 Weighted average of all valid $C_p$ upper and lower points (branch: main). All processors use Athens microarchitecture except C0-Reference. 
 As the two uncertain variables $v_\infty$ and $rho$ in the program are indepedent and  the results are the same with and without autocorellation tracking. 
 
-| Processor    | Precision            | Memory Size | Correlation Tracking | Mean Lift (N) | Lift // Variance ($\mathrm{N^2}$)  | Lift Skewness (a.u.) | Lift Kurtosis (a.u.) |
+| Processor    | Precision            | Memory Size | Correlation Tracking | Mean Lift (N) | Lift \\ Variance ($\mathrm{N^2}$)  | Lift Skewness (a.u.) | Lift Kurtosis (a.u.) |
 |--------------|----------------------|-------------|----------------------|---------------|---------------------------------|----------------------|----------------------|
 | C0-XS        | 32                   | 64 MB       | Disabled             | 716.835513    | 220.969401                      | 110.173271           | 138338.298592        |
 | C0-XS+       | 32                   | 64 MB       | Autocorrelation      | 716.835513    | 220.969401                      | 110.173271           | 138338.298592        |

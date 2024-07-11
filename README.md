@@ -16,7 +16,7 @@
 
 ## Calculate Airfoil Differential Pressure Using Coefficient of Pressure 
 
-Let $v$ be the velocity of the air at a specific point in the flow ($\mathrm{m/s}$) and $v_\infty$ be the uniform velocity of the air far upstream from the airfoil ($\mathrm{m/s}$).
+Let $v$ be the velocity of the air at a specific point in the flow ($\mathrm{m/s}$) and $v_\infty$ be the uniform velocity of the air upstream from the airfoil ($\mathrm{m/s}$).
 Let the coefficient of pressure for each point in the flow be a unitless quantity where
 
 $$C_p = \frac{p-p_\infty}{q_\infty}$$

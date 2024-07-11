@@ -42,20 +42,20 @@ It is however interesting that the flawed method of treating $C_p^\mathrm{Lower}
 Weighted average of all valid $C_p$ upper and lower points (branch: main). All processors use Athens microarchitecture except C0-Reference. 
 As the two uncertain variables $v_\infty$ and $rho$ in the program are indepedent and  the results are the same with and without autocorellation tracking. 
 
-| Processor    | Precision            | Memory Size | Correlation Tracking | Mean Lift (N) | Lift Variance ($\mathrm{N^2}$)  | Lift Skewness (a.u.) | Lift Kurtosis (a.u.) |
-|--------------|----------------------|-------------|----------------------|---------------|---------------------------------|----------------------|----------------------|
-| C0-XS        | 32                   | 64 MB       | Disabled             | 716.835513    | 220.969401                      | 110.173271           | 138338.298592        |
-| C0-XS+       | 32                   | 64 MB       | Autocorrelation      | 716.835513    | 220.969401                      | 110.173271           | 138338.298592        |
-| C0-S         | 64                   | 64 MB       | Disabled             | 716.835733    | 222.091034                      | 113.959879           | 144171.186810        |
-| C0-S+        | 64                   | 64 MB       | Autocorrelation      | 716.835733    | 222.091034                      | 113.959879           | 144171.186810        |
-| C0-M         | 128                  | 256 MB      | Disabled             | 716.835805    | 222.462051                      | 116.178221           | 146696.886020        |
-| C0-M+        | 128                  | 256 MB      | Autocorrelation      | 716.835805    | 222.462051                      | 116.178221           | 146696.886020        |
-| C0-L         | 256                  | 512 MB      | Disabled             | 716.835829    | 222.584264                      | 117.199216           | 147741.437672        |
-| C0-L+        | 256                  | 512 MB      | Autocorrelation      | 716.835829    | 222.584264                      | 117.199216           | 147741.437672        |
-| C0-XL        | 512                  | 1 GB        | Disabled             | 716.835837    | 222.625219                      | 117.592641           | 148170.839522        |
-| C0-XL+       | 512                  | 1 GB        | Autocorrelation      | 716.835837    | 222.625219                      | 117.592641           | 148170.839522        |
-| C0-Bypass    | NA                   | 64 MB       | Disabled             | 716.764165    | NA                              | NA                   | NA                   |
-| C0-Reference | 32                   | 64 MB       | Disabled             | 683.976929    | NA                              | NA                   | NA                   |
+| Processor    | Precision            | Memory Size | Correlation Tracking | Mean Lift (N) | Lift Variance ($\mathrm{N^2}$) | Lift Skewness (a.u.) | Lift Kurtosis (a.u.) |
+|--------------|----------------------|-------------|----------------------|---------------|--------------------------------|----------------------|----------------------|
+| C0-XS        | 32                   | 64 MB       | Disabled             | 716.835513    | 220.969401                     | 110.173271           | 138338.298592        |
+| C0-XS+       | 32                   | 64 MB       | Autocorrelation      | 716.835513    | 220.969401                     | 110.173271           | 138338.298592        |
+| C0-S         | 64                   | 64 MB       | Disabled             | 716.835733    | 222.091034                     | 113.959879           | 144171.186810        |
+| C0-S+        | 64                   | 64 MB       | Autocorrelation      | 716.835733    | 222.091034                     | 113.959879           | 144171.186810        |
+| C0-M         | 128                  | 256 MB      | Disabled             | 716.835805    | 222.462051                     | 116.178221           | 146696.886020        |
+| C0-M+        | 128                  | 256 MB      | Autocorrelation      | 716.835805    | 222.462051                     | 116.178221           | 146696.886020        |
+| C0-L         | 256                  | 512 MB      | Disabled             | 716.835829    | 222.584264                     | 117.199216           | 147741.437672        |
+| C0-L+        | 256                  | 512 MB      | Autocorrelation      | 716.835829    | 222.584264                     | 117.199216           | 147741.437672        |
+| C0-XL        | 512                  | 1 GB        | Disabled             | 716.835837    | 222.625219                     | 117.592641           | 148170.839522        |
+| C0-XL+       | 512                  | 1 GB        | Autocorrelation      | 716.835837    | 222.625219                     | 117.592641           | 148170.839522        |
+| C0-Bypass    | NA                   | 64 MB       | Disabled             | 716.764165    | NA                             | NA                   | NA                   |
+| C0-Reference | 32                   | 64 MB       | Disabled             | 683.976929    | NA                             | NA                   | NA                   |
 
 Drop all but one $C_p$ upper and lower datapoint (branch: two-measurements-only)
 

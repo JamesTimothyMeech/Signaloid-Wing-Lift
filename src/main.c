@@ -8,15 +8,17 @@ enum
 };
 
 double
-calculate_lift_from_C_p(double C_p_upper, double C_p_lower, double v_infinity, double rho, double A)
+calculate_lift_from_C_p(double C_p_upper, double C_p_lower, double v_infinity, double rho, double surface_area)
 {
-	return 0.5 * rho * pow(v_infinity, 2) * (C_p_lower - C_p_upper);
+	return 0.5 * rho * pow(v_infinity, 2) * (C_p_lower - C_p_upper) * surface_area;
 }
 
 int
 main(int argc, char *  argv[])
 {
-	double	v_infinity, C_p_upper_average, C_p_lower_average, rho, lift, A;
+	const double ksurface_area = 1.0;
+	const double rho = 1.225;
+	double	v_infinity, v_infinity_mean, v_infinity_standard_deviation C_p_upper_average, C_p_lower_average, rho, lift;
 
 	char buffer[1024];
 	double C_p_upper_a[kMaxData];
@@ -41,10 +43,10 @@ main(int argc, char *  argv[])
 	{
 		fscanf(file_pointer, "%lf, %lf, %lf, %lf\n", &upper_x_c_a[i], &C_p_upper_a[i], &lower_x_c_a[i], &C_p_lower_a[i]);
 	}
-
-	rho = 1.225;
-	A = 1.0;
-	v_infinity = UxHwDoubleGaussDist(95.2 * 0.3048, 95.2 * 0.3048 * 0.01); ;
+	
+	v_infinity_mean = 95.2 * 0.3048;
+	v_infinity_standard_deviation = 0.01 * v_infinity_mean
+	v_infinity = UxHwDoubleGaussDist(v_infinity_mean, v_infinity_standard_deviation); 
 	printf("v_infinity = %lf\n", v_infinity);
 
 	C_p_upper_average = 0;
@@ -64,7 +66,7 @@ main(int argc, char *  argv[])
 	printf("C_p_upper_average = %lf\n", C_p_upper_average);
 	printf("C_p_upper_average = %lf\n", C_p_lower_average);
 
-	lift = calculate_lift_from_C_p(C_p_upper_average, C_p_lower_average, v_infinity, rho, A);
+	lift = calculate_lift_from_C_p(C_p_upper_average, C_p_lower_average, v_infinity, rho, ksurface_area);
 	printf("lift = %lf\n", lift);
 
 #ifdef DEBUG

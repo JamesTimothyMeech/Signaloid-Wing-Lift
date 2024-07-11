@@ -41,7 +41,7 @@ The authors of [2] refer to these pressure sensors as PSI Pressure Sensing Modul
 Using the Signaloid Cloud Platform to simply visualize the distribution of discrete $C_p$ values over the length of the wing and then average those values was not a proper use of the capabilities of the Signaloid Cloud Platform.
 This naive approach produced a suprisingly reasonable value for the lift of 722 $\mathrm{N}$ with approximately a 3.4 \% error compared to the experimental result. 
 This is likely due to the fact that the upper and lower $C_p$ measurments are reasonably uniformly spaced along the wing and therefore naively averaging them with uniform weight does not introduce a large amount of error. 
-Perhaps this should not be too much of a suprise as we can write that $C_L = \sum^{N-1}_{i=0} (C_p^\mathrm{Lower}[i] - C_p^\mathrm{Upper}[i]) \Delta x$ where $N$ is the number of $C_p$ measurements and $\Delta x$ is the distance between $C_p$ measurements that we assume to be constant for simplicity. 
+Perhaps this should not be too much of a suprise as we can write that $C_L = \sum^N (C_p^\mathrm{Lower}[i] - C_p^\mathrm{Upper}[i]) \Delta x$ where $N$ is the number of $C_p$ measurements and $\Delta x$ is the distance between $C_p$ measurements that we assume to be constant for simplicity. 
 The table below shows that the mean lift has a negligible dependence on the processor used by the Signaloid Cloud Platform. 
 The results for variance, skewness, and kurtosis should be ignored for the table below because loading the upper and lower $C_p$ values into distrubtions makes the uncertainty in the result artificially large.
 As the uncertain variables $C_p^\mathrm{Lower}$, $C_p^\mathrm{Upper}$, $v_\infty$, and $\rho$ in the program are indepedent, the results for each processor variant are the same with and without autocorellation tracking. 
@@ -82,13 +82,13 @@ We can see non-neglible improvements in the accuracy of the variance, skewness, 
 | C0-Bypass    | NA                   | 64 MB       | Disabled             | 716.764165    | NA                             | NA                   | NA                   |
 | C0-Reference | 32                   | 64 MB       | Disabled             | 683.976929    | NA                             | NA                   | NA                   |
 
-To address the question of what would happen if we used fewer pitot tubes and therefore got fewer measurements for $C_p$ we wrote a program (branch: two-measurements-only) where we drop all but one datapoint for both $C_p^\mathrm{Lower} and C_p^\mathrm{Upper}$.
+To address the question of what would happen if we used fewer pitot tubes and therefore got fewer measurements for $C_p$ we wrote a program (branch: two-measurements-only) where we drop all but one datapoint for both $C_p^\mathrm{Lower}$ and $C_p^\mathrm{Upper}$.
 The table of results below show that this has a far worse effect upon the mean lift prediction of the program. 
 The predicted value for lift is approximately 1166 $\mathrm{N}$ and this is approximately a 67 % error when compared to the lift value calculated from the experimentally measured lift coefficient. 
-This indicates that making the assumptions we have made and using the data avaliable from [1] the agreement of our calculations with the experimentally measured lift coefficient are limited by the absence of more $C_p^\mathrm{Lower} and C_p^\mathrm{Upper}$ measurements along the airfoil. 
-The agreement of the lift calculated by our program and the lift calculated from the experimentaly-measured lift coefficient is limited by epistemic uncertainty due to the lack of more $C_p^\mathrm{Lower} and C_p^\mathrm{Upper}$ measurements.
+This indicates that making the assumptions we have made and using the data avaliable from [1] the agreement of our calculations with the experimentally measured lift coefficient are limited by the absence of more $C_p^\mathrm{Lower}$ and $C_p^\mathrm{Upper}$ measurements along the airfoil. 
+The agreement of the lift calculated by our program and the lift calculated from the experimentaly-measured lift coefficient is limited by epistemic uncertainty due to the lack of more $C_p^\mathrm{Lower}$ and $C_p^\mathrm{Upper}$ measurements.
 As before we can see non-neglible improvements in the accuracy of the variance, skewness, and kurtosis with the increasing precision of the processor used by the Signaloid Cloud Platform. 
-These improvements are neglible compated to the epistemic uncertainty that we have exposed ourselves to by failing to complete more $C_p^\mathrm{Lower} and C_p^\mathrm{Upper}$ measurements by installing more pitot tubes or alternative pressure measurement sensors. 
+These improvements are neglible compated to the epistemic uncertainty that we have exposed ourselves to by failing to complete more $C_p^\mathrm{Lower}$ and $C_p^\mathrm{Upper}$ measurements by installing more pitot tubes or alternative pressure measurement sensors. 
 
 | Processor    | Precision            | Memory Size | Correlation Tracking | Mean Lift (N) | Lift Variance ($\mathrm{N^2}$) | Lift Skewness (a.u.) | Lift Kurtosis (a.u.) |
 |--------------|----------------------|-------------|----------------------|---------------|--------------------------------|----------------------|----------------------|

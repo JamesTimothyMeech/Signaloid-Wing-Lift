@@ -38,24 +38,25 @@ $$L = C_L q_\infty A = 698 N$$.
 In our initial (commit #) experiments we read in $C_p^\mathrm{Lower}$ and $C_p^\mathrm{Upper}$ from the Run57.txt in the inputs directory and then loaded the $C_p$ values into distributions.
 This produced a reasonable value for the lift of y with an x \% error compared to the experimental result. Using the Signaloid Cloud Platform to simply visualize the distribution of discrete $C_p$ values over the length of the wing and then average those values was not a proper use of the capabilities of the Signaloid Cloud Platform. We therefore edited the code to perform a weighted averaging of the $C_p^\mathrm{Lower} and C_p^\mathrm{Upper}$ values based upon their relative position on the airfoil, taking into account that there are 29 valid measurement values for $C_p^\mathrm{Upper}$ and only 27 valid measurement values for $C_p^\mathrm{Lower}$. We chose to explore the inclusion of uncertainty in $v_\infty$, the uniform velocity of the air far upstream from the airfoil ($\mathrm{m/s}$) as this value is squared in our analysis, therefore amplifying any uncertainty already present in the variable. 
 It is however interesting that the flawed method of treating $C_p^\mathrm{Lower} and C_p^\mathrm{Upper}$ as distributions, even though they are not, provides reasonable agreement with the experimental lift coefficient and the weighted averaging that we ultimately used for the bulf of our analysis. 
+ 
+Weighted Average $C_p$ Commit # 
 
+| Processor    | Precision            | Memory Size | Microarchitecture | Correlation Tracking | Mean       | Variance   | Skewness   | Kurtosis      |
+|--------------|----------------------|-------------|-------------------|----------------------|------------|------------| -----------|---------------|
+| C0-XS        | 32                   | 64 MB       | Athens            | Disabled             |            |            |            |               |
+| C0-XS+       | 32                   | 64 MB       | Athens            | Autocorrelation      |            |            |            |               |
+| C0-S         | 64                   | 64 MB       | Athens            | Disabled             |            |            |            |               |
+| C0-S+        | 64                   | 64 MB       | Athens            | Autocorrelation      |            |            |            |               |
+| C0-M         | 128                  | 256 MB      | Athens            | Disabled             | 716.835805 | 222.462051 | 116.178221 | 146696.886020 |
+| C0-M+        | 128                  | 256 MB      | Athens            | Autocorrelation      |            |            |            |               | 
+| C0-L         | 256                  | 512 MB      | Athens            | Disabled             |            |            |            |               |
+| C0-L+        | 256                  | 512 MB      | Athens            | Autocorrelation      |            |            |            |               |
+| C0-XL        | 512                  | 1 GB        | Athens            | Disabled             |            |            |            |               |
+| C0-XL+       | 512                  | 1 GB        | Athens            | Autocorrelation      |            |            |            |               |
+| C0-Bypass    | NA                   | 64 MB       | Athens            | Disabled             |            |            |            |               |
+| C0-Reference | 32                   | 64 MB       | Reference         | Disabled             |            |            |            |               |
 
-| Processor    | Precision            | Memory Size | Microarchitecture | Correlation Tracking | Weighted Average $C_p$ Commit # | Drop Out Half of $C_p$ Datapoints Commit # |
-|--------------|----------------------|-------------|-------------------|----------------------|---------------------------------|--------------------------------------------| 
-| C0-XS        | 32                   | 64 MB       | Athens            | Disabled             |                                 |                                            |
-| C0-XS+       | 32                   | 64 MB       | Athens            | Autocorrelation      |                                 |                                            |
-| C0-S         | 64                   | 64 MB       | Athens            | Disabled             |                                 |                                            |
-| C0-S+        | 64                   | 64 MB       | Athens            | Autocorrelation      |                                 |                                            |
-| C0-M         | 128                  | 256 MB      | Athens            | Disabled             |                                 |                                            |
-| C0-M+        | 128                  | 256 MB      | Athens            | Autocorrelation      |                                 |                                            |
-| C0-L         | 256                  | 512 MB      | Athens            | Disabled             |                                 |                                            |
-| C0-L+        | 256                  | 512 MB      | Athens            | Autocorrelation      |                                 |                                            |
-| C0-XL        | 512                  | 1 GB        | Athens            | Disabled             |                                 |                                            |
-| C0-XL+       | 512                  | 1 GB        | Athens            | Autocorrelation      |                                 |                                            |
-| C0-Bypass    | NA                   | 64 MB       | Athens            | Disabled             |                                 |                                            |
-| C0-Reference | 32                   | 64 MB       | Reference         | Disabled             |                                 |                                            |
-
-
+Drop Out Half of $C_p$ Datapoints Commit #
 
 
 ## References

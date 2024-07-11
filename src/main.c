@@ -18,7 +18,7 @@ main(int argc, char *  argv[])
 {
 	const double ksurface_area = 1.0;
 	const double rho = 1.225;
-	double	v_infinity, v_infinity_mean, v_infinity_standard_deviation, C_p_upper_average, C_p_lower_average, rho, lift;
+	double	v_infinity, v_infinity_mean, v_infinity_standard_deviation, C_p_upper_average, C_p_lower_average, lift;
 
 	char buffer[1024];
 	double C_p_upper_a[kMaxData];

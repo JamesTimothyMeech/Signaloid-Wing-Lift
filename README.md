@@ -4,7 +4,7 @@
 # Lift Generation of an Airfoil Using the Signaloid Cloud Platform
 
 ## Plan for Calculating Lift Using Experimental Data for NACA 4415 Airfoil
-1) Get distribution of measured coefficients of pressure $C_p$ along airfoil and a point value $v_\infty$ for air velocity upstream of airfoil from publically avaliable experimental data [1] described in article [2]. Select NACA 4415 Airfoil under 3-by-5-Ft Wind Tunnel Tests to download article and raw data. Choose data in Run 57 of file N4415c100.txt because the article explicitly states "Steady state results of the NACA 4415 testing at Reynolds number of 1.00 million showed a baseline maximum lift coefficient of 1.35 at 14.3° angle of attack." so we know that the system was in steady state and without any leading edge grit roughness or pitch oscillations applied [2].
+1) Obtain a set of measured coefficients of pressure $C_p$ (a.u.) along airfoil and a point value $v_\infty$ for air velocity (m/s) upstream of airfoil from publically avaliable experimental data [1] described in article [2]. Select NACA 4415 Airfoil under 3-by-5-Ft Wind Tunnel Tests to download article and raw data. Choose data in Run 57 of file N4415c100.txt because the article explicitly states "Steady state results of the NACA 4415 testing at Reynolds number of 1.00 million showed a baseline maximum lift coefficient of 1.35 at 14.3° angle of attack." so we know that the system was in steady state and without any leading edge grit roughness or pitch oscillations applied [2].
 2) Load the upper wing surface $C_p$ and lower wing surface $C_p$ distribution along the wing into one uncertain variable each and take $v_\infty = 95.2$ $\mathrm{ft/s}$ as point value.
 3) Use the upper and lower wing surface distributions of $C_p$ to calculate the pressure difference across the wing.
 4) Use the pressure difference and the surface area of the wing to calculate the lift.
@@ -16,7 +16,7 @@
 
 ## Calculate Airfoil Differential Pressure Using Coefficient of Pressure 
 
-Let $v$ be the velocity of the air at a specific point in the flow ($\mathrm{m/s}$) and $v_\infty$ be the uniform velocity of the air upstream from the airfoil ($\mathrm{m/s}$).
+Let $v$ be the velocity of the air (m/s) at a specific point in the flow ($\mathrm{m/s}$) and $v_\infty$ be the uniform velocity (m/s) of the air upstream from the airfoil ($\mathrm{m/s}$).
 Let the coefficient of pressure for each point in the flow be a unitless quantity where
 
 $$C_p = \frac{p-p_\infty}{q_\infty}$$
@@ -31,7 +31,7 @@ $$L = \Delta p A.$$
 
 ## Results and Checking Lift Calculation Result Using Experimentally Measured Coefficient of Lift
 
-Run 57 in file N4415c100.txt in the dataset [1] contains an experimentally measured value of $C_L = 1.354$ for the coefficient of lift that we can use to check the result of our program. We can calculate the lift from the coefficient of lift and known parameters 
+Run 57 in file N4415c100.txt in the dataset [1] contains an experimentally measured value of $C_L = 1.354$ (a.u.) for the coefficient of lift that we can use to check the result of our program. We can calculate the lift from the coefficient of lift and known parameters 
 
 $$L = C_L q_\infty A = 698 \ \mathrm{N}.$$ 
 

@@ -42,8 +42,21 @@ It is however interesting that the flawed method of treating $C_p^\mathrm{Lower}
 
 | Processor    | Precision            | Memory Size | Microarchitecture | Correlation Tracking | Weighted Average $C_p$ Commit # | Drop Out Half of $C_p$ Datapoints Commit # |
 |--------------|----------------------|-------------|-------------------|----------------------|---------------------------------|--------------------------------------------| 
-|              |                      |             |                   |                      |                                 |                                            |
-|              |                      |             |                   |                      |                                 |                                            |
+| C0-XS        | 32                   | 64 MB       | Athens            | Disabled             |                                 |                                            |
+| C0-XS+       | 32                   | 64 MB       | Athens            | Autocorrelation      |                                 |                                            |
+| C0-S         | 64                   | 64 MB       | Athens            | Disabled             |                                 |                                            |
+| C0-S+        | 64                   | 64 MB       | Athens            | Autocorrelation      |                                 |                                            |
+| C0-M         | 128                  | 256 MB      | Athens            | Disabled             |                                 |                                            |
+| C0-M+        | 128                  | 256 MB      | Athens            | Autocorrelation      |                                 |                                            |
+| C0-L         | 256                  | 512 MB      | Athens            | Disabled             |                                 |                                            |
+| C0-L+        | 256                  | 512 MB      | Athens            | Autocorrelation      |                                 |                                            |
+| C0-XL        | 512                  | 1 GB        | Athens            | Disabled             |                                 |                                            |
+| C0-XL+       | 512                  | 1 GB        | Athens            | Autocorrelation      |                                 |                                            |
+| C0-Bypass    | NA                   | 64 MB       | Athens            | Disabled             |                                 |                                            |
+| C0-Reference | 32                   | 64 MB       | Reference         | Disabled             |                                 |                                            |
+
+
+
 
 ## References
 

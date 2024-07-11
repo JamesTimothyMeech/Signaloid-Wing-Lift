@@ -71,9 +71,9 @@ main(int argc, char *  argv[])
 	printf("rho = %lf\n", rho);
 	
 	// Average the first and last C_p upper and lower measuremnts and ignore all of the other measurements
-	C_p_upper_average = (C_p_upper_a[0] + C_p_upper[28]) / 2;
+	C_p_upper_average = (C_p_upper_a[0] + C_p_upper_a[28]) / 2;
         // There are two fewer valid C_p lower measurements than C_p upper measurments
-	C_p_lower_average = (C_p_lower_a[0] + C_p_lower[26]) / 2;
+	C_p_lower_average = (C_p_lower_a[0] + C_p_lower_a[26]) / 2;
 
 	printf("C_p_upper_average = %lf\n", C_p_upper_average);
 	printf("C_p_lower_average = %lf\n", C_p_lower_average);

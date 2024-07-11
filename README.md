@@ -33,7 +33,7 @@ $$L = \Delta p A.$$
 
 Run 57 in file N4415c100.txt in the dataset [1] contains an experimentally measured value of $C_L = 1.354$ for the coefficient of lift that we can use to check the result of our program. We can calculate the lift from the coefficient of lift and known parameters 
 
-$$L = C_L q_\infty A = 698\,\mathrm{N}.$$ 
+$$L = C_L q_\infty A = 698 \quad \mathrm{N}.$$ 
 
 In our initial (commit #) experiments we read in $C_p^\mathrm{Lower}$ and $C_p^\mathrm{Upper}$ from the Run57.txt in the inputs directory and then loaded the $C_p$ values into distributions.
 This produced a reasonable value for the lift of y with an x \% error compared to the experimental result. Using the Signaloid Cloud Platform to simply visualize the distribution of discrete $C_p$ values over the length of the wing and then average those values was not a proper use of the capabilities of the Signaloid Cloud Platform. We therefore edited the code to perform a weighted averaging of the $C_p^\mathrm{Lower} and C_p^\mathrm{Upper}$ values based upon their relative position on the airfoil, taking into account that there are 29 valid measurement values for $C_p^\mathrm{Upper}$ and only 27 valid measurement values for $C_p^\mathrm{Lower}$. We chose to explore the inclusion of uncertainty in $v_\infty$, the uniform velocity of the air far upstream from the airfoil ($\mathrm{m/s}$) as this value is squared in our analysis, therefore amplifying any uncertainty already present in the variable. 

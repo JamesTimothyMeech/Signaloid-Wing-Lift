@@ -41,7 +41,11 @@ The authors of [2] refer to these pressure sensors as PSI Pressure Sensing Modul
 Using the Signaloid Cloud Platform to simply visualize the distribution of discrete $C_p$ values over the length of the wing and then average those values was not a proper use of the capabilities of the Signaloid Cloud Platform.
 This naive approach produced a suprisingly reasonable value for the lift of 722 $\mathrm{N}$ with approximately a 3.4 \% error compared to the experimental result. 
 This is likely due to the fact that the upper and lower $C_p$ measurments are reasonably uniformly spaced along the wing and therefore naively averaging them with uniform weight does not introduce a large amount of error. 
-Perhaps this should not be too much of a suprise as we can write that $C_L = \sum^N (C_p^\mathrm{Lower}[i] - C_p^\mathrm{Upper}[i]) \Delta x$ where $N$ is the number of $C_p$ measurements and $\Delta x$ is the distance between $C_p$ measurements that we assume to be constant for simplicity. 
+Perhaps this should not be too much of a suprise as we can write that
+
+$$C_L = \sum^N (C_p^\mathrm{Lower}[i] - C_p^\mathrm{Upper}[i]) \Delta x$$
+
+where $N$ is the number of $C_p$ measurements and $\Delta x$ is the distance between $C_p$ measurements that we assume to be constant for simplicity. 
 The table below shows that the mean lift has a negligible dependence on the processor used by the Signaloid Cloud Platform. 
 The results for variance, skewness, and kurtosis should be ignored for the table below because loading the upper and lower $C_p$ values into distrubtions makes the uncertainty in the result artificially large.
 As the uncertain variables $C_p^\mathrm{Lower}$, $C_p^\mathrm{Upper}$, $v_\infty$, and $\rho$ in the program are indepedent, the results for each processor variant are the same with and without autocorellation tracking. 

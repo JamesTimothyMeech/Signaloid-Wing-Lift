@@ -20,7 +20,7 @@ main(int argc, char *  argv[])
 	const double ksurface_area = 1.0;
 	const double kconvert_ft_per_s_to_m_per_s = 0.3048;
 	const double kv_infinity_ft_per_s = 95.2;
-	double	v_infinity, v_infinity_mean, v_infinity_standard_deviation, C_p_upper_average, C_p_lower_average, lift;
+	double	v_infinity, v_infinity_mean, v_infinity_standard_deviation, C_p_upper_average, C_p_lower_average, lift, rho;
 
 	char buffer[1024];
 	double C_p_upper_a[kMaxData];
@@ -49,6 +49,7 @@ main(int argc, char *  argv[])
 	v_infinity_mean = kv_infinity_ft_per_s * kconvert_ft_per_s_to_m_per_s;
 	v_infinity_standard_deviation = 0.01 * v_infinity_mean;
 	v_infinity = UxHwDoubleGaussDist(v_infinity_mean, v_infinity_standard_deviation); 
+	rho = UxHwDoubleUniformDist(krho - (krho * 0.01), krho + (krho * 0.01)); 
 	printf("v_infinity = %lf\n", v_infinity);
 
 	C_p_upper_average = 0;
@@ -66,9 +67,9 @@ main(int argc, char *  argv[])
 	}
 
 	printf("C_p_upper_average = %lf\n", C_p_upper_average);
-	printf("C_p_upper_average = %lf\n", C_p_lower_average);
+	printf("C_p_lower_average = %lf\n", C_p_lower_average);
 
-	lift = calculate_lift_from_C_p(C_p_upper_average, C_p_lower_average, v_infinity, krho, ksurface_area);
+	lift = calculate_lift_from_C_p(C_p_upper_average, C_p_lower_average, v_infinity, rho, ksurface_area);
 	printf("lift = %lf\n", lift);
 
 #ifdef DEBUG

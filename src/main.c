@@ -76,7 +76,7 @@ main(int argc, char *  argv[])
 
 	printf("lift = %lf\n", lift);
 	printf("lift mean = %lf\n", UxHwDoubleNthMoment(lift, 1));
-	printf("lift standard deviation = %lf\n", UxHwDoubleNthMoment(lift, 2));
+	printf("lift variance = %lf\n", UxHwDoubleNthMoment(lift, 2));
 	printf("lift skewness = %lf\n", UxHwDoubleNthMoment(lift, 3));
 	printf("lift kurtosis = %lf\n", UxHwDoubleNthMoment(lift, 4));
 

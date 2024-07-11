@@ -36,6 +36,8 @@ Run 57 in file N4415c100.txt in the dataset [1] contains an experimentally measu
 $$L = C_L q_\infty A = 698 \ \mathrm{N}.$$ 
 
 In our initial experiments (branch: uncertain-C_p-hack) we read in $C_p^\mathrm{Lower}$ and $C_p^\mathrm{Upper}$ from the Run57.txt in the inputs directory and then loaded the $C_p$ values into distributions.
+Although we refer to pressure measurements as $C_p$ measurements please note that in the experimental setup used by the authors of [2] to collect the data [1] each $C_p^\mathrm{Lower}$ and $C_p^\mathrm{Upper}$ value corresponds to a physical pressure sensor in their setup.
+The authors of [2] refer to these pressure sensors as PSI Pressure Sensing Modules and do not specify whether or not these devices are pitot tubes and a Google search did not provide any additional information. 
 Using the Signaloid Cloud Platform to simply visualize the distribution of discrete $C_p$ values over the length of the wing and then average those values was not a proper use of the capabilities of the Signaloid Cloud Platform.
 This naive approach produced a suprisingly reasonable value for the lift of 722 $\mathrm{N}$ with approximately a 3.4 \% error compared to the experimental result. 
 This is likely due to the fact that the upper and lower $C_p$ measurments are reasonably uniformly spaced along the wing and therefore naively averaging them with uniform weight does not introduce a large amount of error. 

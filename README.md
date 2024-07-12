@@ -29,7 +29,7 @@ Then $\Delta p = p_\mathrm{Lower} - p_\mathrm{Upper} = \frac{1}{2} \rho v^2_\inf
 
 $$L = \Delta p A.$$
 
-## Results and Checking Calculation Result Using Experimentally Measured Coefficient of Lift
+## Results and Checking Lift Calculation Using Experimentally Measured Coefficient of Lift
 
 Run 57 in file N4415c100.txt in the dataset [1] contains an experimentally measured value of $C_L = 1.354$ (a.u.) for the coefficient of lift that we can use to check the result of our program. We can calculate the lift from the coefficient of lift and known parameters 
 

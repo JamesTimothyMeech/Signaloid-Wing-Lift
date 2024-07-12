@@ -109,6 +109,13 @@ These improvements are neglible compated to the epistemic uncertainty that we ha
 | C0-Bypass    | NA                   | 64 MB       | Disabled             | 1165.516307   | NA                             | NA                   | NA                   |
 | C0-Reference | 32                   | 64 MB       | Disabled             | 1175.779921   | NA                             | NA                   | NA                   |
 
+## Potential Future Extensions of This Work
+
+1. Model the uncertainty of all the pressure sensors used to measure the 27 $C_p^\mathrm{Lower}$ values and 29 $C_p^\mathrm{Upper}$ values.
+2. Run experiments to measure the effect of varying numbers of $C_p^\mathrm{Lower}$ and $C_p^\mathrm{Upper}$ measurements on the calculated lift.
+3. Explore the tradeoff of accuracy gained by adding more pressure sensors against the uncertainty of those pressure sensors. We would need to run additional wind tunnel experiments to do this.
+4. Sample from the final lift distribtution using the UxHwDoubleSample function 100,000,000 times and calculate the Wasserstein distance between a 100,000,000 sample reference ground truth Monte Carlo run on my local machine an each of the various different processors supplied with the Signaloid Compute Platform listed in the above tables. 
+
 ## References
 
 [1] https://www.nrel.gov/wind/nwtc/airfoils-osu-data.html

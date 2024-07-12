@@ -48,9 +48,9 @@ In our initial experiments (branch: uncertain-C_p-hack) the program reads in the
 Although we refer to pressure measurements as $C_p$ measurements please note that in the experimental setup used by the authors of [2] to collect the data [1] each $C_p^\mathrm{Lower}$ and $C_p^\mathrm{Upper}$ value corresponds to a physical pressure sensor in their setup.
 The authors of [2] refer to these pressure sensors as PSI Pressure Sensing Modules and do not specify whether or not these devices are pitot tubes. A Google search did not provide any additional information. 
 Using the Signaloid Cloud Platform to visualize the distribution of discrete $C_p$ values over the length of the airfoil and then average those values was not a proper use of the capabilities of the Signaloid Cloud Platform.
-Even so, this naive approach produced a suprisingly reasonable value for the lift of 722 $\mathrm{N}$ with approximately a 3.4 \% error compared to the result calculated using the coefficient of lift. 
-This is likely due to the fact that the upper and lower $C_p$ measurments are reasonably uniformly spaced along the airfoil.
-Therefore, naively averaging them with uniform weight does not introduce a large amount of error. 
+Even so, this naive approach produced a suprisingly reasonable value for the lift of approximately 722 $\mathrm{N}$ with approximately a 3.4 \% error compared to the result calculated using the coefficient of lift. 
+This is explained by the reasonably uniform spacing of the upper and lower $C_p$ measurements along the airfoil.
+Therefore, naively averaging the $C_p$ values with uniform weight does not introduce a large amount of error. 
 Perhaps this should not be too much of a suprise as we can write that
 
 $$C_L = \sum_{i=0}^{N-1} (C_p^\mathrm{Lower}[i] - C_p^\mathrm{Upper}[i]) \frac{\Delta x}{c}$$

@@ -83,8 +83,8 @@ This same trend is observable for all subsequent experiments.
 | C0-Reference | 32                   | 64 MB       | Disabled             | 1023.393931   | NA                             | NA                   | NA                   |
 
 We needed to remove the oversimplification of treating $C_p$ measurements from different sensors as one uncertain variable.
-We therefore edited the code to perform a weighted averaging of the $C_p^\mathrm{Lower} and C_p^\mathrm{Upper}$ values based upon their relative position on the airfoil, taking into account that there are 29 valid measurement values for $C_p^\mathrm{Upper}$ and only 27 valid measurement values for $C_p^\mathrm{Lower}$. 
-The table below shows a slightly improved value for the lift of 716.8 $\mathrm{N}$ with 2.70 % error. Now we are not treating the $C_p^\mathrm{Lower} and C_p^\mathrm{Upper}$ values as distributions the variance, skewness, and kurtosis values reflect the uncertainty we introduced in the $v_\infty$ and $\rho$ variables.
+We therefore edited the code to perform a weighted averaging of the $C_p^\mathrm{Lower}$ and $C_p^\mathrm{Upper}$ values based upon their relative position on the airfoil, taking into account that there are 29 valid measurement values for $C_p^\mathrm{Upper}$ and only 27 valid measurement values for $C_p^\mathrm{Lower}$. 
+The table below shows a slightly improved value for the lift of 716.8 $\mathrm{N}$ with 2.70 % error. Now we are not treating the $C_p^\mathrm{Lower}$ and $C_p^\mathrm{Upper}$ values as distributions the variance, skewness, and kurtosis values reflect the uncertainty we introduced in the $v_\infty$ and $\rho$ variables.
 We can see small but non-negligible improvements in the accuracy of the variance, skewness, and kurtosis with the increasing precision of the processor used by the Signaloid Cloud Platform.
 The plot below the table shows the distribution of the lift calculated using the main branch on a C0-XL processor. 
 

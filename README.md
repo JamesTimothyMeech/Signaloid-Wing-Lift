@@ -25,16 +25,17 @@ Let the coefficient of pressure for each point in the flow be a unitless quantit
 
 $$C_p = \frac{p-p_\infty}{q_\infty}$$
 
-where $q_\infty = \frac{1}{2} \rho v^2_\infty$. We can re-arrange the equation and substitute $\frac{1}{2} \rho v^2_\infty$ for $q_\infty$ to get
+where $q_\infty = \frac{1}{2} \rho v^2_\infty$. We can re-arrange the equation and substitute $\frac{1}{2} \rho v^2_\infty$ for $q_\infty$ to obtain
 
 $$p = p_\infty + \frac{1}{2} \rho v^2_\infty C_p$$.
 
+Let $\Delta p$ be the pressure difference across the wing ($\mathrm{kg/ms^2}$) and $p_\mathrm{Lower}$ and $p_\mathrm{Upper}$ be the pressure above and below the airfoil respectively ($\mathrm{kg/ms^2}$). Let $A$ be the surface area of the underside of the airfoil ($\mathrm{m^2}$).
 Then $\Delta p = p_\mathrm{Lower} - p_\mathrm{Upper} = \frac{1}{2} \rho v^2_\infty (C_p^\mathrm{Lower}$ - $C_p^\mathrm{Upper})$ as $p_\infty$ is present in the expression for both $p_\mathrm{Lower}$ and $p_\mathrm{Upper}$ and therefore cancels out. Once we have calculated $\Delta p$ the lift is 
 
 $$L = \Delta p A.$$
 
 In all of our experiments we used a Gaussian distribution to model the uncertainty in $v_\infty$ and a uniform distribution to model the uncertainty in $\rho$.
-For $v_\infty$ used a mean of $v_\infty = 95.2$ $\mathrm{ft/s}$ converted to have units $\mathrm{m/s}$ with a standard deviation of 1 % of the mean. 
+For $v_\infty$ we used a mean of $v_\infty = 95.2$ $\mathrm{ft/s}$ converted to have units $\mathrm{m/s}$ with a standard deviation of 1 % of the mean. 
 For $\rho$ we used a range of 1.225 $\mathrm{kg/m^3}$ +/- 1 % of the point value. 
 
 ## Results and Checking Lift Calculation Using Experimentally Measured Coefficient of Lift

@@ -34,6 +34,7 @@ Then $\Delta p = p_\mathrm{Lower} - p_\mathrm{Upper} = \frac{1}{2} \rho v^2_\inf
 
 $$L = \Delta p A.$$
 
+We chose to explore the inclusion of uncertainty in $v_\infty$, the uniform velocity of the air far upstream from the airfoil ($\mathrm{m/s}$) as this value is squared in our analysis, therefore amplifying any uncertainty already present in the variable. 
 In all of our experiments we used a Gaussian distribution to model the uncertainty in $v_\infty$ and a uniform distribution to model the uncertainty in $\rho$.
 For $v_\infty$ we used a mean of $v_\infty = 95.2$ $\mathrm{ft/s}$ converted to have units $\mathrm{m/s}$ with a standard deviation of 1 % of the mean. 
 For $\rho$ we used a range of 1.225 $\mathrm{kg/m^3}$ +/- 1 % of the point value. 
@@ -76,8 +77,8 @@ This same trend is observable for all subsequent experiments.
 | C0-Bypass    | NA                   | 64 MB       | Disabled             | 721.975565    | NA                             | NA                   | NA                   |        
 | C0-Reference | 32                   | 64 MB       | Disabled             | 1023.393931   | NA                             | NA                   | NA                   |
 
+We needed to remove the oversimplification of treating $C_p$ measurements from different sensors as one uncertain variable.
 We therefore edited the code to perform a weighted averaging of the $C_p^\mathrm{Lower} and C_p^\mathrm{Upper}$ values based upon their relative position on the airfoil, taking into account that there are 29 valid measurement values for $C_p^\mathrm{Upper}$ and only 27 valid measurement values for $C_p^\mathrm{Lower}$. 
-We chose to explore the inclusion of uncertainty in $v_\infty$, the uniform velocity of the air far upstream from the airfoil ($\mathrm{m/s}$) as this value is squared in our analysis, therefore amplifying any uncertainty already present in the variable. 
 The table below shows a slightly improved value for lift of 716.8 $\mathrm{N}$ with 2.70 % error. Now we are not treating the $C_p^\mathrm{Lower} and C_p^\mathrm{Upper}$ values as distributions the variance, skewness, and kurtosis values reflect the uncertainty we introduced in the $v_\infty$ and $\rho$ variables.
 We can see small but non-neglible improvements in the accuracy of the variance, skewness, and kurtosis with the increasing precision of the processor used by the Signaloid Cloud Platform. 
 

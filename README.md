@@ -78,8 +78,8 @@ This same trend is observable for all subsequent experiments.
 
 We therefore edited the code to perform a weighted averaging of the $C_p^\mathrm{Lower} and C_p^\mathrm{Upper}$ values based upon their relative position on the airfoil, taking into account that there are 29 valid measurement values for $C_p^\mathrm{Upper}$ and only 27 valid measurement values for $C_p^\mathrm{Lower}$. 
 We chose to explore the inclusion of uncertainty in $v_\infty$, the uniform velocity of the air far upstream from the airfoil ($\mathrm{m/s}$) as this value is squared in our analysis, therefore amplifying any uncertainty already present in the variable. 
-The table below shows a slightly improved value for lift of 716.8 $\mathrm{N}$ with 2.70 % error. Now we are not treating the $C_p^\mathrm{Lower} and C_p^\mathrm{Upper}$ values as distributions the variance, skewness, and kurtosis values reflect the uncertainty we introduced in the $v_\infty$, and $\rho$ variables.
-We can see non-neglible improvements in the accuracy of the variance, skewness, and kurtosis with the increasing precision of the processor used by the Signaloid Cloud Platform. 
+The table below shows a slightly improved value for lift of 716.8 $\mathrm{N}$ with 2.70 % error. Now we are not treating the $C_p^\mathrm{Lower} and C_p^\mathrm{Upper}$ values as distributions the variance, skewness, and kurtosis values reflect the uncertainty we introduced in the $v_\infty$ and $\rho$ variables.
+We can see small but non-neglible improvements in the accuracy of the variance, skewness, and kurtosis with the increasing precision of the processor used by the Signaloid Cloud Platform. 
 
 | Processor    | Precision            | Memory Size | Correlation Tracking | Mean Lift ($\mathrm{N}$) | Lift Variance ($\mathrm{N^2}$) | Lift Skewness (a.u.) | Lift Kurtosis (a.u.) |
 |--------------|----------------------|-------------|----------------------|---------------|--------------------------------|----------------------|----------------------|
@@ -96,12 +96,13 @@ We can see non-neglible improvements in the accuracy of the variance, skewness, 
 | C0-Bypass    | NA                   | 64 MB       | Disabled             | 716.764165    | NA                             | NA                   | NA                   |
 | C0-Reference | 32                   | 64 MB       | Disabled             | 683.976929    | NA                             | NA                   | NA                   |
 
-To address the question of what would happen if we used fewer pitot tubes and therefore got fewer measurements for $C_p$ we wrote a program (branch: two-measurements-only) where we drop all but one datapoint for both $C_p^\mathrm{Lower}$ and $C_p^\mathrm{Upper}$.
-The table of results below show that this has a far worse effect upon the mean lift prediction of the program. 
-The predicted value for lift is approximately 1166 $\mathrm{N}$ and this is approximately a 67 % error when compared to the lift value calculated from the experimentally measured lift coefficient. 
-This indicates that making the assumptions we have made and using the data avaliable from [1] the agreement of our calculations with the experimentally measured lift coefficient are limited by the absence of more $C_p^\mathrm{Lower}$ and $C_p^\mathrm{Upper}$ measurements along the airfoil. 
+To address the question of what would happen if we used fewer pressure sensors and therefore obtained fewer measurements for $C_p$, we wrote a program (branch: two-measurements-only) where we drop all but one datapoint for both $C_p^\mathrm{Lower}$ and $C_p^\mathrm{Upper}$.
+The table of results below show that this has an extreme effect upon the mean lift prediction of the program. 
+The predicted value for lift is approximately 1166 $\mathrm{N}$ an error of approximately 67 % when compared to the lift value calculated from the experimentally measured lift coefficient. 
+This indicates that making the assumptions we have made and using the data avaliable from [1] the agreement of our calculations with the experimentally measured lift coefficient are limited by the quantity of more $C_p^\mathrm{Lower}$ and $C_p^\mathrm{Upper}$ measurements along the airfoil. 
 The agreement of the lift calculated by our program and the lift calculated from the experimentaly-measured lift coefficient is limited by epistemic uncertainty due to the lack of more $C_p^\mathrm{Lower}$ and $C_p^\mathrm{Upper}$ measurements.
-As before we can see non-neglible improvements in the accuracy of the variance, skewness, and kurtosis with the increasing precision of the processor used by the Signaloid Cloud Platform. 
+It is difficult to quantify the effect of aleatoric uncertainty from the pressure sensors without repeated empirical sensor measurements.
+As before, we can see non-neglible improvements in the accuracy of the variance, skewness, and kurtosis with the increasing precision of the processor used by the Signaloid Cloud Platform. 
 These improvements are neglible compated to the epistemic uncertainty that we have exposed ourselves to by failing to complete more $C_p^\mathrm{Lower}$ and $C_p^\mathrm{Upper}$ measurements by installing more pitot tubes or alternative pressure measurement sensors. 
 
 | Processor    | Precision            | Memory Size | Correlation Tracking | Mean Lift ($\mathrm{N}$) | Lift Variance ($\mathrm{N^2}$) | Lift Skewness (a.u.) | Lift Kurtosis (a.u.) |
@@ -123,8 +124,10 @@ These improvements are neglible compated to the epistemic uncertainty that we ha
 
 1. Model the uncertainty of all the pressure sensors used to measure the 27 $C_p^\mathrm{Lower}$ values and 29 $C_p^\mathrm{Upper}$ values.
 2. Run experiments to measure the effect of varying numbers of $C_p^\mathrm{Lower}$ and $C_p^\mathrm{Upper}$ measurements on the calculated lift.
-3. Explore the tradeoff of accuracy gained by adding more pressure sensors against the uncertainty of those pressure sensors. We would need to run additional wind tunnel experiments to do this.
-4. Sample from the final lift distribtution using the UxHwDoubleSample function 100,000,000 times and calculate the Wasserstein distance between a 100,000,000 sample reference ground truth Monte Carlo run on my local machine an each of the various different processors supplied with the Signaloid Compute Platform listed in the above tables. 
+3. Explore the tradeoff of error reduction gained by adding more pressure sensors against the uncertainty of those pressure sensors. We would need to run additional wind tunnel experiments to do this. Or guess the shape and parameters of the distributions quantifying the pressure sensor uncertainty. 
+4. Sample from the final lift distribtution using the UxHwDoubleSample function 100,000,000 times and calculate the Wasserstein distance between a 100,000,000 sample reference ground truth Monte Carlo run on my local machine and each of the various processors supplied with the Signaloid Compute Platform listed in the above tables.
+5. Find experimental data for an airfoil in a wind tunnel with many repeated raw sensor measurements and re-run the program with empirical distributions loaded into an uncertain variable for each upper and lower $C_p$ value.
+6. Re-write a minimal implementation of Xfoil to calculate $C_p$ values using the C programming language with uncertainty information.
 
 ## References
 

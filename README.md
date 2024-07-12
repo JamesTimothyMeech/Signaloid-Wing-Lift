@@ -19,7 +19,7 @@ The image below is the side profile of the NACA 4415 airfoil used to collect the
 
 ## Calculate Airfoil Differential Pressure Using Coefficient of Pressure 
 
-As we have experimental measurements of the coefficient of pressure we do not need to Bernoulli's equation to calculate the lift produced by the airfoil.
+As we have experimental measurements of the coefficient of pressure we do not need to Bernoulli's equation to calculate the lift produced by the airfoil [3].
 Let $v$ be the velocity of the air ($\mathrm{m/s}$) at a specific point in the flow and $v_\infty$ be the uniform velocity ($\mathrm{m/s}$) of the air upstream from the airfoil.
 Let the coefficient of pressure for each point in the flow be a unitless quantity where
 
@@ -135,3 +135,5 @@ These improvements are neglible compated to the epistemic uncertainty that we ha
 [1] https://www.nrel.gov/wind/nwtc/airfoils-osu-data.html
 
 [2] Hoffmann, M. J., R. Reuss Ramsay, and G. M. Gregorek. Effects of grit roughness and pitch oscillations on the NACA 4415 airfoil. No. NREL/TP-442-7815. National Renewable Energy Lab.(NREL), Golden, CO (United States); The Ohio State Univ., Columbus, OH (United States), 1996.
+
+[3] https://ocw.mit.edu/courses/16-01-unified-engineering-i-ii-iii-iv-fall-2005-spring-2006/122da0ffdc4a15d958685358dde118f3_sp7_notes.pdf

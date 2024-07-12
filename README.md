@@ -50,8 +50,8 @@ In our initial experiments (branch: uncertain-C_p-hack) the program reads in the
 Although we refer to pressure measurements as $C_p$ measurements please note that in the experimental setup used by the authors of [2] to collect the data [1] each $C_p^\mathrm{Lower}$ and $C_p^\mathrm{Upper}$ value corresponds to a physical pressure sensor in their setup.
 The authors of [2] refer to these pressure sensors as PSI Pressure Sensing Modules and do not specify whether or not these devices are pitot tubes. A Google search did not provide any additional information. The plots below show the distribution of upper and lower $C_p$ values ignoring the spatial position of the $C_p$ values for the uncertain-C_p-hack branch on a C0-XL core.
 
-<img width="344" alt="C_p_lower" src="https://github.com/user-attachments/assets/abde78b6-d5bf-4d0d-85de-f8fd983fef65">
-<img width="342" alt="C_p_upper" src="https://github.com/user-attachments/assets/7a3bf5bb-6330-4350-97d3-3b544a87828e">
+<img style="text-align:center" width="344" alt="C_p_lower" src="https://github.com/user-attachments/assets/abde78b6-d5bf-4d0d-85de-f8fd983fef65">
+<img style="text-align:center" width="342" alt="C_p_upper" src="https://github.com/user-attachments/assets/7a3bf5bb-6330-4350-97d3-3b544a87828e">
 
 Using the Signaloid Cloud Platform to visualize the distribution of discrete $C_p$ values over the length of the airfoil and then average those values was not a proper use of the capabilities of the Signaloid Cloud Platform.
 Even so, this naive approach produced a suprisingly reasonable value for the lift of approximately 722 $\mathrm{N}$ with approximately a 3.4 \% error compared to the result calculated using the coefficient of lift. 
@@ -103,7 +103,7 @@ The plot below the table shows the distribution of the lift calculated using the
 | C0-Bypass    | NA                   | 64 MB       | Disabled             | 716.764165    | NA                             | NA                   | NA                   |
 | C0-Reference | 32                   | 64 MB       | Disabled             | 683.976929    | NA                             | NA                   | NA                   |
 
-<img width="345" alt="lift" src="https://github.com/user-attachments/assets/c330610b-bc94-4ac0-91dc-b7ecdbfdf5dd">
+<img style="text-align:center" width="345" alt="lift" src="https://github.com/user-attachments/assets/c330610b-bc94-4ac0-91dc-b7ecdbfdf5dd">
 
 To address the question of what would happen if we used fewer pressure sensors and therefore obtained fewer measurements for $C_p$, we wrote a program (branch: two-measurements-only) where we drop all but one datapoint for both $C_p^\mathrm{Lower}$ and $C_p^\mathrm{Upper}$.
 The table of results below show that this has an extreme effect upon the mean lift prediction of the program. 

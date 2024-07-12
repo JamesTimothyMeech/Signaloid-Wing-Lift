@@ -47,7 +47,11 @@ $$L = C_L q_\infty A = 698 \ \mathrm{N}.$$
 
 In our initial experiments (branch: uncertain-C_p-hack) the program reads in the measurements of $C_p^\mathrm{Lower}$ and $C_p^\mathrm{Upper}$ from the Run57.txt file in the inputs directory and then loaded the $C_p$ values into distributions.
 Although we refer to pressure measurements as $C_p$ measurements please note that in the experimental setup used by the authors of [2] to collect the data [1] each $C_p^\mathrm{Lower}$ and $C_p^\mathrm{Upper}$ value corresponds to a physical pressure sensor in their setup.
-The authors of [2] refer to these pressure sensors as PSI Pressure Sensing Modules and do not specify whether or not these devices are pitot tubes. A Google search did not provide any additional information. 
+The authors of [2] refer to these pressure sensors as PSI Pressure Sensing Modules and do not specify whether or not these devices are pitot tubes. A Google search did not provide any additional information. The plots below show the distribution of upper and lower $C_p$ values ignoring the spatial position of the $C_p$ values.
+
+<img width="344" alt="C_p_lower" src="https://github.com/user-attachments/assets/abde78b6-d5bf-4d0d-85de-f8fd983fef65">
+<img width="342" alt="C_p_upper" src="https://github.com/user-attachments/assets/7a3bf5bb-6330-4350-97d3-3b544a87828e">
+
 Using the Signaloid Cloud Platform to visualize the distribution of discrete $C_p$ values over the length of the airfoil and then average those values was not a proper use of the capabilities of the Signaloid Cloud Platform.
 Even so, this naive approach produced a suprisingly reasonable value for the lift of approximately 722 $\mathrm{N}$ with approximately a 3.4 \% error compared to the result calculated using the coefficient of lift. 
 This is explained by the reasonably uniform spacing of the upper and lower $C_p$ measurements along the airfoil.

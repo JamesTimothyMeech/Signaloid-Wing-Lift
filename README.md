@@ -31,7 +31,7 @@ where $q_\infty = \frac{1}{2} \rho v^2_\infty$. We can re-arrange the equation a
 $$p = p_\infty + \frac{1}{2} \rho v^2_\infty C_p.$$
 
 Let $\Delta p$ be the pressure difference across the wing ($\mathrm{kg/ms^2}$) and $p_\mathrm{Lower}$ and $p_\mathrm{Upper}$ be the pressure below and above the airfoil respectively ($\mathrm{kg/ms^2}$). Let $A$ be the surface area of the underside of the airfoil ($\mathrm{m^2}$).
-Then $\Delta p = p_\mathrm{Lower} - p_\mathrm{Upper} = \frac{1}{2} \rho v^2_\infty (C_p^\mathrm{Lower}$ - $C_p^\mathrm{Upper})$ as $p_\infty$ is present in the expression for both $p_\mathrm{Lower}$ and $p_\mathrm{Upper}$ and therefore cancels out. Once we have calculated $\Delta p$ the lift is 
+Then $\Delta p = p_\mathrm{Lower} - p_\mathrm{Upper} = \frac{1}{2} \rho v^2_\infty (C_p^\mathrm{Lower}$ - $C_p^\mathrm{Upper})$. The variable $p_\infty$ is present in the expression for both $p_\mathrm{Lower}$ and $p_\mathrm{Upper}$ and therefore cancels out. Once we have calculated $\Delta p$ the lift ($\mathrm{N}$) is 
 
 $$L = \Delta p A.$$
 
@@ -42,11 +42,11 @@ For $\rho$ we used a range of 1.225 $\mathrm{kg/m^3}$ +/- 1 % of the point value
 
 ## Results and Checking Lift Calculation Using Experimentally Measured Coefficient of Lift
 
-Run 57 in file N4415c100.txt in dataset 1 contains an experimentally measured value of $C_L = 1.354$ (a.u.) for the coefficient of lift that we can use to check the result of our program. We can calculate the lift from the coefficient of lift and known parameters 
+Run 57 in file N4415c100.txt in dataset [1] contains an experimentally measured value of $C_L = 1.354$ (a.u.) for the coefficient of lift that we can use to check the result of our program. We can calculate the lift from the coefficient of lift and known parameters 
 
 $$L = C_L q_\infty A = 698 \ \mathrm{N}.$$ 
 
-In our initial experiments (branch: uncertain-C_p-hack) the program reads in the measurements of $C_p^\mathrm{Lower}$ and $C_p^\mathrm{Upper}$ from the Run57.txt file in the inputs directory and then loaded the $C_p$ values into distributions.
+In our initial experiments (branch: uncertain-C_p-hack) the program read in the measurements of $C_p^\mathrm{Lower}$ and $C_p^\mathrm{Upper}$ from the Run57.txt file in the inputs directory and then loaded the $C_p$ values into distributions.
 Although we refer to pressure measurements as $C_p$ measurements please note that in the experimental setup used by the authors of [2] to collect the data [1] each $C_p^\mathrm{Lower}$ and $C_p^\mathrm{Upper}$ value corresponds to a physical pressure sensor in their setup.
 The authors of [2] refer to these pressure sensors as PSI Pressure Sensing Modules and do not specify whether or not these devices are pitot tubes. A Google search did not provide any additional information. The plots below show the distribution of upper and lower $C_p$ values ignoring the spatial position of the $C_p$ values for the uncertain-C_p-hack branch on a C0-XL core.
 
@@ -108,7 +108,7 @@ The plot below the table shows the distribution of the lift calculated using the
 To address the question of what would happen if we used fewer pressure sensors and therefore obtained fewer measurements for $C_p$, we wrote a program (branch: two-measurements-only) where we drop all but one datapoint for both $C_p^\mathrm{Lower}$ and $C_p^\mathrm{Upper}$.
 The table of results below shows that this has an extreme effect on the mean lift prediction of the program. 
 The predicted value for lift is approximately 1166 $\mathrm{N}$ an error of approximately 67 % when compared to the lift value calculated from the experimentally measured lift coefficient. 
-This indicates that making the assumptions we have made and using the data available from [1] the agreement of our calculations with the experimentally measured lift coefficient is limited by the quantity of more $C_p^\mathrm{Lower}$ and $C_p^\mathrm{Upper}$ measurements along the airfoil. 
+This indicates that making the assumptions we have made and using the data available from [1] the agreement of our calculations with the experimentally measured lift coefficient is limited by the quantity of $C_p^\mathrm{Lower}$ and $C_p^\mathrm{Upper}$ measurements along the airfoil. 
 The agreement of the lift calculated by our program and the lift calculated from the experimentally-measured lift coefficient is limited by epistemic uncertainty due to the lack of more $C_p^\mathrm{Lower}$ and $C_p^\mathrm{Upper}$ measurements.
 It is difficult to quantify the effect of aleatoric uncertainty from the pressure sensors without repeated empirical sensor measurements.
 As before, we can see non-negligible improvements in the accuracy of the variance, skewness, and kurtosis with the increasing precision of the processor used by the Signaloid Cloud Platform. 

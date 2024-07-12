@@ -28,7 +28,7 @@ $$C_p = \frac{p-p_\infty}{q_\infty}$$
 
 where $q_\infty = \frac{1}{2} \rho v^2_\infty$. We can re-arrange the equation and substitute $\frac{1}{2} \rho v^2_\infty$ for $q_\infty$ to obtain
 
-$$p = p_\infty + \frac{1}{2} \rho v^2_\infty C_p$$.
+$$p = p_\infty + \frac{1}{2} \rho v^2_\infty C_p.$$
 
 Let $\Delta p$ be the pressure difference across the wing ($\mathrm{kg/ms^2}$) and $p_\mathrm{Lower}$ and $p_\mathrm{Upper}$ be the pressure above and below the airfoil respectively ($\mathrm{kg/ms^2}$). Let $A$ be the surface area of the underside of the airfoil ($\mathrm{m^2}$).
 Then $\Delta p = p_\mathrm{Lower} - p_\mathrm{Upper} = \frac{1}{2} \rho v^2_\infty (C_p^\mathrm{Lower}$ - $C_p^\mathrm{Upper})$ as $p_\infty$ is present in the expression for both $p_\mathrm{Lower}$ and $p_\mathrm{Upper}$ and therefore cancels out. Once we have calculated $\Delta p$ the lift is 

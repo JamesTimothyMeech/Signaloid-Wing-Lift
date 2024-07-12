@@ -13,14 +13,14 @@ The image below is the side profile of the NACA 4415 airfoil used to collect the
 4) Use the pressure difference and the surface area of the airfoil to calculate the lift.
 
 ## Assumptions Required for the Plan to Work
-1) My interpretation of the experimental data from [1] and [2] is correct.
-2) The air flowing over the airfoil has constant density $\rho$ (it cannot be compressed to change density), and has zero viscosity. Also the experiment is conducted at constant air temperature with constant humidity and a fixed elevation.
-3) The airfoil has only horizontal surfaces so none of the pressure difference that generates the lift of the airfoil is lost due to the pressure pushing on a non-horizontal surface.
+1) My interpretation of the raw experimental data from source [1] and article [2] is correct.
+2) The fluid is air and the air flowing over the airfoil has constant density $\rho$ ($\mathrm{kg/m^3}$), and has zero viscosity. Also the experiment is conducted at constant air temperature with constant humidity and a fixed elevation.
+3) The airfoil has only horizontal surfaces so none of the pressure difference that generates the lift force becomes a component in the horizontal direction.
 
 ## Calculate Airfoil Differential Pressure Using Coefficient of Pressure 
 
 As we have experimental measurements of the coefficient of pressure we do not need to Bernoulli's equation to calculate the lift produced by the airfoil.
-Let $v$ be the velocity of the air ($\mathrm{m/s}$) at a specific point in the flow ($\mathrm{m/s}$) and $v_\infty$ be the uniform velocity ($\mathrm{m/s}$) of the air upstream from the airfoil ($\mathrm{m/s}$).
+Let $v$ be the velocity of the air ($\mathrm{m/s}$) at a specific point in the flow and $v_\infty$ be the uniform velocity ($\mathrm{m/s}$) of the air upstream from the airfoil.
 Let the coefficient of pressure for each point in the flow be a unitless quantity where
 
 $$C_p = \frac{p-p_\infty}{q_\infty}$$
@@ -44,7 +44,7 @@ Run 57 in file N4415c100.txt in the dataset [1] contains an experimentally measu
 
 $$L = C_L q_\infty A = 698 \ \mathrm{N}.$$ 
 
-In our initial experiments (branch: uncertain-C_p-hack) we read in $C_p^\mathrm{Lower}$ and $C_p^\mathrm{Upper}$ from the Run57.txt in the inputs directory and then loaded the $C_p$ values into distributions.
+In our initial experiments (branch: uncertain-C_p-hack) we read in $C_p^\mathrm{Lower}$ and $C_p^\mathrm{Upper}$ from the Run57.txt file in the inputs directory and then loaded the $C_p$ values into distributions.
 Although we refer to pressure measurements as $C_p$ measurements please note that in the experimental setup used by the authors of [2] to collect the data [1] each $C_p^\mathrm{Lower}$ and $C_p^\mathrm{Upper}$ value corresponds to a physical pressure sensor in their setup.
 The authors of [2] refer to these pressure sensors as PSI Pressure Sensing Modules and do not specify whether or not these devices are pitot tubes and a Google search did not provide any additional information. 
 Using the Signaloid Cloud Platform to simply visualize the distribution of discrete $C_p$ values over the length of the airfoil and then average those values was not a proper use of the capabilities of the Signaloid Cloud Platform.

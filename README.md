@@ -44,21 +44,22 @@ Run 57 in file N4415c100.txt in the dataset [1] contains an experimentally measu
 
 $$L = C_L q_\infty A = 698 \ \mathrm{N}.$$ 
 
-In our initial experiments (branch: uncertain-C_p-hack) we read in $C_p^\mathrm{Lower}$ and $C_p^\mathrm{Upper}$ from the Run57.txt file in the inputs directory and then loaded the $C_p$ values into distributions.
+In our initial experiments (branch: uncertain-C_p-hack) the program reads in the measurements of $C_p^\mathrm{Lower}$ and $C_p^\mathrm{Upper}$ from the Run57.txt file in the inputs directory and then loaded the $C_p$ values into distributions.
 Although we refer to pressure measurements as $C_p$ measurements please note that in the experimental setup used by the authors of [2] to collect the data [1] each $C_p^\mathrm{Lower}$ and $C_p^\mathrm{Upper}$ value corresponds to a physical pressure sensor in their setup.
 The authors of [2] refer to these pressure sensors as PSI Pressure Sensing Modules and do not specify whether or not these devices are pitot tubes and a Google search did not provide any additional information. 
 Using the Signaloid Cloud Platform to simply visualize the distribution of discrete $C_p$ values over the length of the airfoil and then average those values was not a proper use of the capabilities of the Signaloid Cloud Platform.
 This naive approach produced a suprisingly reasonable value for the lift of 722 $\mathrm{N}$ with approximately a 3.4 \% error compared to the experimental result. 
-This is likely due to the fact that the upper and lower $C_p$ measurments are reasonably uniformly spaced along the airfoil and therefore naively averaging them with uniform weight does not introduce a large amount of error. 
+This is likely due to the fact that the upper and lower $C_p$ measurments are reasonably uniformly spaced along the airfoil.
+Therefore, naively averaging them with uniform weight does not introduce a large amount of error. 
 Perhaps this should not be too much of a suprise as we can write that
 
-$$C_L = \sum_{i=0}^N (C_p^\mathrm{Lower}[i] - C_p^\mathrm{Upper}[i]) \Delta x$$
+$$C_L = \sum_{i=0}^{N-1} (C_p^\mathrm{Lower}[i] - C_p^\mathrm{Upper}[i]) \frac{\Delta x}{c}$$
 
 where $N$ is the number of $C_p$ measurements and $\Delta x$ is the distance between $C_p$ measurements normalized by chord length that we assume to be constant for simplicity. 
 The table below shows that the mean lift has a negligible dependence on the processor used by the Signaloid Cloud Platform. 
 The results for variance, skewness, and kurtosis should be ignored for the table below because loading the upper and lower $C_p$ values into distrubtions makes the uncertainty in the result artificially large.
 As the uncertain variables $C_p^\mathrm{Lower}$, $C_p^\mathrm{Upper}$, $v_\infty$, and $\rho$ in the program are indepedent, the results for each processor variant are the same with and without autocorellation tracking. 
-This trend is observable for all subsequent experiments.
+This same trend is observable for all subsequent experiments.
 
 | Processor    | Precision            | Memory Size | Correlation Tracking | Mean Lift ($\mathrm{N}$) | Lift Variance ($\mathrm{N^2}$) | Lift Skewness (a.u.) | Lift Kurtosis (a.u.) |
 |--------------|----------------------|-------------|----------------------|---------------|--------------------------------|----------------------|----------------------|

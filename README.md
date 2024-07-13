@@ -16,7 +16,9 @@ The image below is the side profile of the NACA 4415 airfoil used to collect the
 ## Assumptions Required for the Plan to Work
 1) My interpretation of the raw experimental data from source [1] and article [2] is correct.
 2) The fluid is air and the air flowing over the airfoil has constant density $\rho$ ($\mathrm{kg/m^3}$), and has zero viscosity. Also, the experiment is conducted at constant air temperature with constant humidity and a fixed elevation.
-3) The airfoil has only horizontal surfaces so none of the pressure difference that generates the lift force becomes a component in the horizontal direction.
+3) The airfoil angle of attack is a constant 14.3 degrees as stated in the Run57.txt file.
+4) The air velocity upstream of the airfoil in the wind tunnel is a constant 95.2 ft/s as stated in the Run57.txt file.
+5) The airfoil has only horizontal surfaces so none of the pressure difference that generates the lift force becomes a component in the horizontal direction.
 
 ## Calculate Airfoil Differential Pressure Using Coefficient of Pressure 
 

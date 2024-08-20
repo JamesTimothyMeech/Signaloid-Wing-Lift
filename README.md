@@ -69,7 +69,7 @@ The results for variance, skewness, and kurtosis should be ignored for the table
 As the uncertain variables $C_p^\mathrm{Lower}$, $C_p^\mathrm{Upper}$, $v_\infty$, and $\rho$ in the program are independent, the results for each processor variant are the same with and without autocorellation tracking. 
 This same trend is observable for all subsequent experiments.
 
-| Processor    | Precision            | Memory Size | Correlation Tracking | Mean Lift ($\mathrm{N}$) | Lift Variance ($\mathrm{N^2}$) | Lift Skewness (a.u.) | Lift Kurtosis (a.u.) |
+| Processor    | Precision            | Memory Size | Correlation Tracking | Mean Lift ($\mathrm{N}$) | Lift Variance ($\mathrm{N^2}$) | Lift Third Centralized Moment (a.u.) | Lift Fourth Centralized Moment (a.u.) |
 |--------------|----------------------|-------------|----------------------|---------------|--------------------------------|----------------------|----------------------|
 | C0-XS        | 32                   | 64 MB       | Disabled             | 722.047433    | 351549.855477                  | 158068720.585565     | 408136562203.337219  |
 | C0-XS+       | 32                   | 64 MB       | Autocorrelation      | 722.047433    | 351549.855477                  | 158068720.585565     | 408136562203.337219  |
@@ -90,7 +90,7 @@ The table below shows a slightly improved value for the lift of 716.8 $\mathrm{N
 We can see small but non-negligible improvements in the accuracy of the variance, skewness, and kurtosis with the increasing precision of the processor used by the Signaloid Cloud Platform.
 The plot below the table shows the distribution of the lift calculated using the main branch on a C0-XL processor. 
 
-| Processor    | Precision            | Memory Size | Correlation Tracking | Mean Lift ($\mathrm{N}$) | Lift Variance ($\mathrm{N^2}$) | Lift Skewness (a.u.) | Lift Kurtosis (a.u.) |
+| Processor    | Precision            | Memory Size | Correlation Tracking | Mean Lift ($\mathrm{N}$) | Lift Variance ($\mathrm{N^2}$) | Lift Third Centralized Moment (a.u.) | Lift Fourth Centralized Moment (a.u.) |
 |--------------|----------------------|-------------|----------------------|---------------|--------------------------------|----------------------|----------------------|
 | C0-XS        | 32                   | 64 MB       | Disabled             | 716.835513    | 220.969401                     | 110.173271           | 138338.298592        |
 | C0-XS+       | 32                   | 64 MB       | Autocorrelation      | 716.835513    | 220.969401                     | 110.173271           | 138338.298592        |
@@ -116,7 +116,7 @@ It is difficult to quantify the effect of aleatoric uncertainty from the pressur
 As before, we can see non-negligible improvements in the accuracy of the variance, skewness, and kurtosis with the increasing precision of the processor used by the Signaloid Cloud Platform. 
 These improvements are negligible compared to the epistemic uncertainty that we have exposed ourselves to by failing to complete more $C_p^\mathrm{Lower}$ and $C_p^\mathrm{Upper}$ measurements by installing more pitot tubes or alternative pressure measurement sensors. 
 
-| Processor    | Precision            | Memory Size | Correlation Tracking | Mean Lift ($\mathrm{N}$) | Lift Variance ($\mathrm{N^2}$) | Lift Skewness (a.u.) | Lift Kurtosis (a.u.) |
+| Processor    | Precision            | Memory Size | Correlation Tracking | Mean Lift ($\mathrm{N}$) | Lift Variance ($\mathrm{N^2}$) | Lift Third Centralized Moment (a.u.) | Lift Fourth Centralized Moment (a.u.) |
 |--------------|----------------------|-------------|----------------------|---------------|--------------------------------|----------------------|----------------------|
 | C0-XS        | 32                   | 64 MB       | Disabled             | 1165.632326   | 584.273621                     | 473.698986           | 967187.578964        | 
 | C0-XS+       | 32                   | 64 MB       | Autocorrelation      | 1165.632326   | 584.273621                     | 473.698986           | 967187.578964        |

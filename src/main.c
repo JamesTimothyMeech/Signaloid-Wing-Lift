@@ -83,8 +83,8 @@ main(int argc, char *  argv[])
 	printf("lift = %lf\n", lift);
 	printf("lift mean = %lf\n", UxHwDoubleNthMoment(lift, 1));
 	printf("lift variance = %lf\n", UxHwDoubleNthMoment(lift, 2));
-	printf("lift skewness = %lf\n", UxHwDoubleNthMoment(lift, 3));
-	printf("lift kurtosis = %lf\n", UxHwDoubleNthMoment(lift, 4));
+	printf("lift third centralized moment = %lf\n", UxHwDoubleNthMoment(lift, 3));
+	printf("lift fourth centralized moment = %lf\n", UxHwDoubleNthMoment(lift, 4));
 
 #ifdef DEBUG
 	printf("debug message\n");
